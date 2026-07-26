@@ -1,0 +1,412 @@
+window.update-popup {
+  background: transparent;
+}
+
+.updates-root {
+  background-color: rgba(25, 28, 31, 0.98);
+  border: 1px solid rgba(222, 226, 230, 0.16);
+  border-radius: 8px;
+  color: #e7ebef;
+  font-family: "Inter", "Cantarell", "Noto Sans", sans-serif;
+  font-size: 18px;
+  min-width: 960px;
+  padding: 32px 48px;
+}
+
+.updates-root.chooser-root {
+  min-width: 520px;
+}
+
+.chooser {
+  padding: 8px 0;
+}
+
+.chooser-content {
+  min-height: 150px;
+}
+
+.chooser-buttons {
+  margin-top: 4px;
+}
+
+.chooser-button {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(222, 226, 230, 0.18);
+  border-radius: 6px;
+  color: #e7ebef;
+  font-size: 20px;
+  font-weight: 700;
+  min-height: 56px;
+  min-width: 190px;
+  padding: 0 22px;
+}
+
+.chooser-button:hover {
+  background-color: rgba(255, 255, 255, 0.10);
+  border-color: rgba(222, 226, 230, 0.28);
+}
+
+.chooser-button:active {
+  background-color: rgba(82, 145, 224, 0.16);
+  border-color: rgba(158, 197, 255, 0.42);
+}
+
+.key-hints {
+  margin-top: 18px;
+}
+
+.key-hint {
+  color: #8d98a6;
+}
+
+.keycap {
+  background-color: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(222, 226, 230, 0.16);
+  border-radius: 5px;
+  color: #dce3ea;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-size: 14px;
+  font-weight: 800;
+  min-width: 24px;
+  padding: 2px 7px;
+}
+
+.key-hint-label {
+  color: #8d98a6;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.message {
+  padding: 8px 0;
+}
+
+.loading-message {
+  min-height: 240px;
+}
+
+.message-title {
+  margin-bottom: 4px;
+}
+
+.loading-title {
+  margin-bottom: 0;
+}
+
+.loading-spinner {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.loading-text {
+  margin-top: 2px;
+}
+
+.message-scroller {
+  min-height: 120px;
+}
+
+.message-body {
+  color: #c2cad3;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.message-body.loading {
+  color: #aeb7c2;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.loading-prefix,
+.loading-suffix {
+  color: #aeb7c2;
+}
+
+.message-body.error {
+  color: #ffb3b3;
+}
+
+.message-actions {
+  margin-top: 4px;
+}
+
+.report-header {
+  margin-bottom: 4px;
+}
+
+.back-button {
+  background-color: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(222, 226, 230, 0.16);
+  border-radius: 6px;
+  color: #c2cad3;
+  font-size: 18px;
+  font-weight: 700;
+  min-height: 42px;
+  min-width: 96px;
+  margin-right: 16px;
+  margin-top: 16px;
+  padding: 0 16px;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(222, 226, 230, 0.26);
+  color: #e7ebef;
+}
+
+.back-button:active {
+  background-color: rgba(82, 145, 224, 0.14);
+  border-color: rgba(158, 197, 255, 0.38);
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #aeb7c2;
+  font-size: 24px;
+}
+
+.report-subtitle {
+  margin-top: 2px;
+}
+
+.subtitle-branch {
+  margin-top: 4px;
+}
+
+.subtitle-kind,
+.subtitle-suffix {
+  color: #aeb7c2;
+  font-weight: 700;
+}
+
+.flake-tag {
+  background-color: rgba(82, 145, 224, 0.18);
+  border: 1px solid rgba(158, 197, 255, 0.34);
+  border-radius: 5px;
+  color: #d7e7ff;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-size: 22px;
+  font-weight: 800;
+  padding: 1px 8px;
+}
+
+.summary-count {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0;
+}
+
+.summary {
+  margin-top: 24px;
+}
+
+.no-changes {
+  color: #9fe3a8;
+  font-size: 24px;
+  font-weight: 800;
+  padding: 0;
+}
+
+.summary-count.added {
+  background: transparent;
+  color: #9fe3a8;
+}
+
+.summary-count.removed {
+  background: transparent;
+  color: #ff9b9b;
+}
+
+.summary-count.upgraded {
+  background: transparent;
+  color: #9ec5ff;
+}
+
+.summary-count.downgraded {
+  background: transparent;
+  color: #ffd39e;
+}
+
+.summary-count.changed,
+.summary-count.other {
+  background: transparent;
+  color: #ead982;
+}
+
+.section {
+  margin-top: 28px;
+}
+
+.section-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  margin-left: 16px;
+}
+
+.section-title.added {
+  color: #9fe3a8;
+}
+
+.section-title.removed {
+  color: #ff9b9b;
+}
+
+.section-title.upgraded {
+  color: #9ec5ff;
+}
+
+.section-title.downgraded {
+  color: #ffd39e;
+}
+
+.section-title.changed,
+.section-title.other {
+  color: #ead982;
+}
+
+.updates-list {
+  margin-top: 8px;
+  min-height: 560px;
+}
+
+.changes-grid {
+  background-color: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(222, 226, 230, 0.10);
+  border-radius: 6px;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 16px;
+}
+
+.header-cell {
+  color: #8d98a6;
+  font-size: 22px;
+  font-weight: 800;
+  padding: 0 16px 12px 16px;
+}
+
+.cell {
+  padding: 10px 16px;
+}
+
+.name-cell {
+  font-weight: 700;
+}
+
+.version-cell {
+  color: #c2cad3;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+}
+
+.size-cell.added {
+  color: #9fe3a8;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-weight: 700;
+}
+
+.size-cell.removed {
+  color: #ff9b9b;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-weight: 700;
+}
+
+.size-cell.upgraded {
+  color: #9ec5ff;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-weight: 700;
+}
+
+.size-cell.downgraded {
+  color: #ffd39e;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-weight: 700;
+}
+
+.size-cell.changed,
+.size-cell.other {
+  color: #ead982;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-weight: 700;
+}
+
+.status {
+  border-radius: 4px;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-size: 22px;
+  font-weight: 800;
+  padding: 6px 12px;
+}
+
+.status.added {
+  background-color: rgba(63, 185, 106, 0.16);
+  color: #9fe3a8;
+}
+
+.status.removed {
+  background-color: rgba(224, 82, 82, 0.16);
+  color: #ff9b9b;
+}
+
+.status.upgraded {
+  background-color: rgba(82, 145, 224, 0.16);
+  color: #9ec5ff;
+}
+
+.status.downgraded {
+  background-color: rgba(224, 156, 82, 0.16);
+  color: #ffd39e;
+}
+
+.status.changed,
+.status.other {
+  background-color: rgba(214, 188, 84, 0.16);
+  color: #ead982;
+}
+
+.empty {
+  color: #7f8b98;
+  padding: 16px;
+}
+
+.metrics {
+  margin-top: 8px;
+}
+
+.metric {
+  padding: 0;
+}
+
+.metric-branch {
+  color: #66717d;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.metric-label {
+  color: #8d98a6;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.metric-value {
+  color: #e7ebef;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.resize-handle {
+  border-bottom: 4px solid rgba(174, 183, 194, 0.65);
+  border-right: 4px solid rgba(174, 183, 194, 0.65);
+  margin-left: 16px;
+  margin-top: 12px;
+  min-height: 36px;
+  min-width: 36px;
+}

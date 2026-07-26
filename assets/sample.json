@@ -1,0 +1,4833 @@
+{
+  "diffs": [
+    {
+      "name": "60-dygma.rules",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "<none>",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 216,
+      "size_delta": 216
+    },
+    {
+      "name": "ada",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.4.4"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 2736352,
+      "size_new": 1368176,
+      "size_delta": -1368176
+    },
+    {
+      "name": "alsa-lib",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.2.15.3"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 5616432,
+      "size_new": 3744288,
+      "size_delta": -1872144
+    },
+    {
+      "name": "alsa-topology-conf",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.2.5.1"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1032504,
+      "size_new": 688336,
+      "size_delta": -344168
+    },
+    {
+      "name": "alsa-ucm-conf",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.2.15.3"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 2585856,
+      "size_new": 1723904,
+      "size_delta": -861952
+    },
+    {
+      "name": "at-spi2-core",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "2.60.1",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 11613648,
+      "size_new": 9244184,
+      "size_delta": -2369464
+    },
+    {
+      "name": "audit",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "4.1.2-unstable-2025-09-06-lib"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1642496,
+      "size_new": 1211976,
+      "size_delta": -430520
+    },
+    {
+      "name": "avahi",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.8"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 6553984,
+      "size_new": 4899896,
+      "size_delta": -1654088
+    },
+    {
+      "name": "aws-c-auth",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.9.1"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 396640,
+      "size_new": 793280,
+      "size_delta": 396640
+    },
+    {
+      "name": "aws-c-cal",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.9.2"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 162496,
+      "size_new": 324992,
+      "size_delta": 162496
+    },
+    {
+      "name": "aws-c-common",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.12.4"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1155864,
+      "size_new": 2307712,
+      "size_delta": 1151848
+    },
+    {
+      "name": "aws-c-compression",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.3.1"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 32392,
+      "size_new": 64784,
+      "size_delta": 32392
+    },
+    {
+      "name": "aws-c-event-stream",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.7.0"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 180240,
+      "size_new": 360480,
+      "size_delta": 180240
+    },
+    {
+      "name": "aws-c-http",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.10.4"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 643264,
+      "size_new": 1282480,
+      "size_delta": 639216
+    },
+    {
+      "name": "aws-c-io",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.22.0"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 656080,
+      "size_new": 1312160,
+      "size_delta": 656080
+    },
+    {
+      "name": "aws-c-mqtt",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.13.3"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 571376,
+      "size_new": 1138656,
+      "size_delta": 567280
+    },
+    {
+      "name": "aws-c-s3",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.8.7"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 393296,
+      "size_new": 786592,
+      "size_delta": 393296
+    },
+    {
+      "name": "aws-c-sdkutils",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.2.4"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 159064,
+      "size_new": 318128,
+      "size_delta": 159064
+    },
+    {
+      "name": "aws-checksums",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.2.7"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 88656,
+      "size_new": 177312,
+      "size_delta": 88656
+    },
+    {
+      "name": "aws-crt-cpp",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.34.3"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1002976,
+      "size_new": 2016440,
+      "size_delta": 1013464
+    },
+    {
+      "name": "bash",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "5.2p37"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "5.3p9"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 8879360,
+      "size_new": 5368104,
+      "size_delta": -3511256
+    },
+    {
+      "name": "bash-interactive",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "5.3p9"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 37022224,
+      "size_new": 29606424,
+      "size_delta": -7415800
+    },
+    {
+      "name": "bazecor",
+      "versions": [
+        {
+          "kind": "changed",
+          "old": {
+            "name": "1.6.5-bwrap",
+            "amount": 1
+          },
+          "new": {
+            "name": "1.8.3-bwrap",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "changed",
+          "old": {
+            "name": "1.6.5-extracted",
+            "amount": 1
+          },
+          "new": {
+            "name": "1.8.3-extracted",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "changed",
+          "old": {
+            "name": "1.6.5-fhsenv-profile",
+            "amount": 1
+          },
+          "new": {
+            "name": "1.8.3-fhsenv-profile",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "changed",
+          "old": {
+            "name": "1.6.5-fhsenv-rootfs",
+            "amount": 1
+          },
+          "new": {
+            "name": "1.8.3-fhsenv-rootfs",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "changed",
+          "old": {
+            "name": "1.6.5-fish-completions",
+            "amount": 1
+          },
+          "new": {
+            "name": "1.8.3-patched-fish-completions",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "changed",
+          "old": {
+            "name": "1.6.5-init",
+            "amount": 1
+          },
+          "new": {
+            "name": "1.8.3-init",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "changed",
+          "old": {
+            "name": "1.6.5",
+            "amount": 1
+          },
+          "new": {
+            "name": "1.8.3",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "added",
+          "version": {
+            "name": "1.8.3-patched",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 330682592,
+      "size_new": 330703000,
+      "size_delta": 20408
+    },
+    {
+      "name": "boehm-gc",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "8.2.8",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 320440,
+      "size_new": 640968,
+      "size_delta": 320528
+    },
+    {
+      "name": "boost",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "1.87.0",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 30470592,
+      "size_new": 31913632,
+      "size_delta": 1443040
+    },
+    {
+      "name": "brotli",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.2.0-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.2.0-lib"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.2.0"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 5106880,
+      "size_new": 3999808,
+      "size_delta": -1107072
+    },
+    {
+      "name": "busybox",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "1.36.1",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 236024,
+      "size_new": 472088,
+      "size_delta": 236064
+    },
+    {
+      "name": "bzip2",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.0.8"
+          },
+          "old_amount": 5,
+          "new_amount": 4
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 595176,
+      "size_new": 506216,
+      "size_delta": -88960
+    },
+    {
+      "name": "c-ares",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.34.6-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.34.6"
+          },
+          "old_amount": 4,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1612736,
+      "size_new": 806368,
+      "size_delta": -806368
+    },
+    {
+      "name": "cairo",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.18.4"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 8669944,
+      "size_new": 6498264,
+      "size_delta": -2171680
+    },
+    {
+      "name": "chafa",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.18.2-bin"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.18.2"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1713744,
+      "size_new": 856872,
+      "size_delta": -856872
+    },
+    {
+      "name": "coreutils",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "9.11"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 6839280,
+      "size_new": 5032544,
+      "size_delta": -1806736
+    },
+    {
+      "name": "cups",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.4.19-lib"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 38348320,
+      "size_new": 33438656,
+      "size_delta": -4909664
+    },
+    {
+      "name": "curl",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "8.13.0",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 7676136,
+      "size_new": 6576672,
+      "size_delta": -1099464
+    },
+    {
+      "name": "dav1d",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.5.3"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 7938696,
+      "size_new": 5292464,
+      "size_delta": -2646232
+    },
+    {
+      "name": "dbus",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.16.2-lib"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.16.2"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 4477600,
+      "size_new": 3433480,
+      "size_delta": -1044120
+    },
+    {
+      "name": "dconf",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.49.0-lib"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1408304,
+      "size_new": 1076000,
+      "size_delta": -332304
+    },
+    {
+      "name": "dejavu-fonts-minimal",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.37"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 3041888,
+      "size_new": 2281416,
+      "size_delta": -760472
+    },
+    {
+      "name": "determinate-nix",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "3.21.8",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 4394880,
+      "size_delta": 4394880
+    },
+    {
+      "name": "determinate-nix-cmd",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "3.21.8",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 1148824,
+      "size_delta": 1148824
+    },
+    {
+      "name": "determinate-nix-expr",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "3.21.8",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 3723544,
+      "size_delta": 3723544
+    },
+    {
+      "name": "determinate-nix-fetchers",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "3.21.8",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 1654480,
+      "size_delta": 1654480
+    },
+    {
+      "name": "determinate-nix-flake",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "3.21.8",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 965016,
+      "size_delta": 965016
+    },
+    {
+      "name": "determinate-nix-main",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "3.21.8",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 389744,
+      "size_delta": 389744
+    },
+    {
+      "name": "determinate-nix-store",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "3.21.8",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 6753520,
+      "size_delta": 6753520
+    },
+    {
+      "name": "determinate-nix-util",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "3.21.8",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 2513560,
+      "size_delta": 2513560
+    },
+    {
+      "name": "dix",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "2.1.0",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 4302384,
+      "size_delta": 4302384
+    },
+    {
+      "name": "dnix",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "<none>",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 8976,
+      "size_delta": 8976
+    },
+    {
+      "name": "dnix-fish-completions",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "<none>",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 96,
+      "size_delta": 96
+    },
+    {
+      "name": "dns-root-data",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2025-04-14"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 19464,
+      "size_new": 14496,
+      "size_delta": -4968
+    },
+    {
+      "name": "editline",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.17.1-unstable-2025-05-24"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 59928,
+      "size_new": 119856,
+      "size_delta": 59928
+    },
+    {
+      "name": "elfutils",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.192"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.194"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 20891472,
+      "size_new": 12558416,
+      "size_delta": -8333056
+    },
+    {
+      "name": "expat",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "2.8.0",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1462024,
+      "size_new": 1148464,
+      "size_delta": -313560
+    },
+    {
+      "name": "fd",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "10.4.2"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 8261096,
+      "size_new": 4133256,
+      "size_delta": -4127840
+    },
+    {
+      "name": "file",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "5.47"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 41127392,
+      "size_new": 30231232,
+      "size_delta": -10896160
+    },
+    {
+      "name": "fontconfig",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.17.1-lib"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.17.1"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 7505440,
+      "size_new": 5794592,
+      "size_delta": -1710848
+    },
+    {
+      "name": "freetype",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.14.2"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 9869824,
+      "size_new": 7598224,
+      "size_delta": -2271600
+    },
+    {
+      "name": "fribidi",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.0.16"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 747200,
+      "size_new": 580800,
+      "size_delta": -166400
+    },
+    {
+      "name": "gawk",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "5.4.0"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 10640264,
+      "size_new": 7108008,
+      "size_delta": -3532256
+    },
+    {
+      "name": "gcc",
+      "versions": [
+        {
+          "kind": "changed",
+          "old": {
+            "name": "14.2.1.20250322-lib",
+            "amount": 1
+          },
+          "new": {
+            "name": "14.3.0-lib",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "changed",
+          "old": {
+            "name": "14.2.1.20250322-libgcc",
+            "amount": 1
+          },
+          "new": {
+            "name": "14.3.0-libgcc",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "15.2.0-lib"
+          },
+          "old_amount": 5,
+          "new_amount": 4
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "15.2.0-libgcc"
+          },
+          "old_amount": 5,
+          "new_amount": 4
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 83455784,
+      "size_new": 72936016,
+      "size_delta": -10519768
+    },
+    {
+      "name": "gdk-pixbuf",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.44.6"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 12327544,
+      "size_new": 9366792,
+      "size_delta": -2960752
+    },
+    {
+      "name": "giflib",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "5.2.2"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1668376,
+      "size_new": 1251080,
+      "size_delta": -417296
+    },
+    {
+      "name": "glib",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.88.1-bin"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.88.1"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 81094816,
+      "size_new": 64407840,
+      "size_delta": -16686976
+    },
+    {
+      "name": "glibc",
+      "versions": [
+        {
+          "kind": "changed",
+          "old": {
+            "name": "2.40-66",
+            "amount": 1
+          },
+          "new": {
+            "name": "2.40-224",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.42-61"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 211465368,
+      "size_new": 176353336,
+      "size_delta": -35112032
+    },
+    {
+      "name": "gmp-with-cxx",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.3.0"
+          },
+          "old_amount": 9,
+          "new_amount": 6
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 7267592,
+      "size_new": 4909000,
+      "size_delta": -2358592
+    },
+    {
+      "name": "gnugrep",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.12"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 3817224,
+      "size_new": 2862456,
+      "size_delta": -954768
+    },
+    {
+      "name": "gnused",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "4.9"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 2206656,
+      "size_new": 1471104,
+      "size_delta": -735552
+    },
+    {
+      "name": "gnutls",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.8.13"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 14306832,
+      "size_new": 10574080,
+      "size_delta": -3732752
+    },
+    {
+      "name": "gobject-introspection",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.86.0"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 6603840,
+      "size_new": 5359680,
+      "size_delta": -1244160
+    },
+    {
+      "name": "gperftools",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.17.2"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 16064424,
+      "size_new": 10997080,
+      "size_delta": -5067344
+    },
+    {
+      "name": "graphite2",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.3.14"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 981184,
+      "size_new": 747720,
+      "size_delta": -233464
+    },
+    {
+      "name": "gsettings-desktop-schemas",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "50.1"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 24744328,
+      "size_new": 18261240,
+      "size_delta": -6483088
+    },
+    {
+      "name": "gtk+3",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.24.52"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 191798200,
+      "size_new": 148170672,
+      "size_delta": -43627528
+    },
+    {
+      "name": "harfbuzz",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "13.2.1"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 17178376,
+      "size_new": 13276720,
+      "size_delta": -3901656
+    },
+    {
+      "name": "home-configuration-reference-manpage",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "<none>",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Removed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 2415384,
+      "size_new": 0,
+      "size_delta": -2415384
+    },
+    {
+      "name": "home-configuration-reference-manpage-fish-completions",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "<none>",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Removed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1088,
+      "size_new": 0,
+      "size_delta": -1088
+    },
+    {
+      "name": "hostname-debian",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.25-man"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.25"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 108528,
+      "size_new": 72352,
+      "size_delta": -36176
+    },
+    {
+      "name": "hostname-hostname-debian",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.25"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 3984,
+      "size_new": 2656,
+      "size_delta": -1328
+    },
+    {
+      "name": "hwloc",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "2.12.2-lib",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 461552,
+      "size_new": 913880,
+      "size_delta": 452328
+    },
+    {
+      "name": "iana-etc",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "20251215"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1142336,
+      "size_new": 571168,
+      "size_delta": -571168
+    },
+    {
+      "name": "icu4c",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "76.1-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "76.1"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 258534056,
+      "size_new": 212421200,
+      "size_delta": -46112856
+    },
+    {
+      "name": "imath",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.2.2"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 3672696,
+      "size_new": 2749672,
+      "size_delta": -923024
+    },
+    {
+      "name": "iso-codes",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "4.20.1"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 92562536,
+      "size_new": 68883400,
+      "size_delta": -23679136
+    },
+    {
+      "name": "jemalloc",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "5.3.1"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 3297392,
+      "size_new": 2196344,
+      "size_delta": -1101048
+    },
+    {
+      "name": "jq",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.8.1-bin"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.8.1"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1472304,
+      "size_new": 994328,
+      "size_delta": -477976
+    },
+    {
+      "name": "json-c",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.18"
+          },
+          "old_amount": 5,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1255448,
+      "size_new": 753464,
+      "size_delta": -501984
+    },
+    {
+      "name": "json-glib",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.10.8"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 2708560,
+      "size_new": 2029768,
+      "size_delta": -678792
+    },
+    {
+      "name": "keyutils",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.6.3-lib"
+          },
+          "old_amount": 5,
+          "new_amount": 4
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 214224,
+      "size_new": 171408,
+      "size_delta": -42816
+    },
+    {
+      "name": "kmod",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "31-lib"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "31"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1351752,
+      "size_new": 1018344,
+      "size_delta": -333408
+    },
+    {
+      "name": "krb5",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.21.3-lib"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 15663464,
+      "size_new": 12799800,
+      "size_delta": -2863664
+    },
+    {
+      "name": "lcms2",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.18"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1969152,
+      "size_new": 1473256,
+      "size_delta": -495896
+    },
+    {
+      "name": "lerc",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "4.1.0"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 3471184,
+      "size_new": 2608584,
+      "size_delta": -862600
+    },
+    {
+      "name": "libaom",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.12.1"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 26575488,
+      "size_new": 17716992,
+      "size_delta": -8858496
+    },
+    {
+      "name": "libapparmor",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "4.1.7"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 2260680,
+      "size_new": 1656048,
+      "size_delta": -604632
+    },
+    {
+      "name": "libarchive",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.8.7-lib"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 3244672,
+      "size_new": 4217288,
+      "size_delta": 972616
+    },
+    {
+      "name": "libavif",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.4.1"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 2291136,
+      "size_new": 1145568,
+      "size_delta": -1145568
+    },
+    {
+      "name": "libblake3",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "1.8.2",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 120184,
+      "size_new": 240368,
+      "size_delta": 120184
+    },
+    {
+      "name": "libcap-ng",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.9.3"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 507152,
+      "size_new": 336440,
+      "size_delta": -170712
+    },
+    {
+      "name": "libcpuid",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.8.1"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 334840,
+      "size_new": 769504,
+      "size_delta": 434664
+    },
+    {
+      "name": "libdaemon",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.14"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 167912,
+      "size_new": 125936,
+      "size_delta": -41976
+    },
+    {
+      "name": "libdatrie",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2019-12-20-lib"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 220976,
+      "size_new": 177736,
+      "size_delta": -43240
+    },
+    {
+      "name": "libdeflate",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.25"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1856592,
+      "size_new": 1386960,
+      "size_delta": -469632
+    },
+    {
+      "name": "libepoxy",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.5.10"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 8746904,
+      "size_new": 6997640,
+      "size_delta": -1749264
+    },
+    {
+      "name": "libev",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "4.33"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 462672,
+      "size_new": 231336,
+      "size_delta": -231336
+    },
+    {
+      "name": "libevent",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.1.12"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 3525472,
+      "size_new": 2643088,
+      "size_delta": -882384
+    },
+    {
+      "name": "libffi",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "3.4.8",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.5.2"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 464040,
+      "size_new": 316616,
+      "size_delta": -147424
+    },
+    {
+      "name": "libgit2",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "1.9.2-lib",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1664088,
+      "size_new": 3315864,
+      "size_delta": 1651776
+    },
+    {
+      "name": "libglvnd",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.7.0"
+          },
+          "old_amount": 5,
+          "new_amount": 4
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 15366440,
+      "size_new": 12745960,
+      "size_delta": -2620480
+    },
+    {
+      "name": "libidn2",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.3.8"
+          },
+          "old_amount": 5,
+          "new_amount": 4
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 2211024,
+      "size_new": 1842840,
+      "size_delta": -368184
+    },
+    {
+      "name": "libjpeg-turbo",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.1.4"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 8833488,
+      "size_new": 6775656,
+      "size_delta": -2057832
+    },
+    {
+      "name": "libjxl",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.11.2"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 30628912,
+      "size_new": 19674456,
+      "size_delta": -10954456
+    },
+    {
+      "name": "libmicrohttpd",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.0.2"
+          },
+          "old_amount": 2,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 799896,
+      "size_new": 1046936,
+      "size_delta": 247040
+    },
+    {
+      "name": "libpng-apng",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.6.56"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1379264,
+      "size_new": 1099376,
+      "size_delta": -279888
+    },
+    {
+      "name": "libpsl",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.21.5"
+          },
+          "old_amount": 5,
+          "new_amount": 4
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 543576,
+      "size_new": 430208,
+      "size_delta": -113368
+    },
+    {
+      "name": "librsvg",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.62.1"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 64811784,
+      "size_new": 48720632,
+      "size_delta": -16091152
+    },
+    {
+      "name": "libseccomp",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.6.0-lib"
+          },
+          "old_amount": 2,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 543216,
+      "size_new": 741608,
+      "size_delta": 198392
+    },
+    {
+      "name": "libselinux",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.10"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 3490272,
+      "size_new": 2783544,
+      "size_delta": -706728
+    },
+    {
+      "name": "libsodium",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "1.0.20-unstable-2025-12-31",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 682488,
+      "size_new": 1228816,
+      "size_delta": 546328
+    },
+    {
+      "name": "libsoup",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.6.6"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 5920512,
+      "size_new": 4706416,
+      "size_delta": -1214096
+    },
+    {
+      "name": "libssh2",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.11.1"
+          },
+          "old_amount": 5,
+          "new_amount": 4
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1679248,
+      "size_new": 1340728,
+      "size_delta": -338520
+    },
+    {
+      "name": "libtasn1",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "4.21.0"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 392328,
+      "size_new": 294232,
+      "size_delta": -98096
+    },
+    {
+      "name": "libthai",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.1.30"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 2660352,
+      "size_new": 2008040,
+      "size_delta": -652312
+    },
+    {
+      "name": "libtiff",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "4.7.1"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 4028216,
+      "size_new": 3271272,
+      "size_delta": -756944
+    },
+    {
+      "name": "libunistring",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "1.4.1",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.3"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.4.2"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 12456256,
+      "size_new": 10385968,
+      "size_delta": -2070288
+    },
+    {
+      "name": "libunwind",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.8.3"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1096072,
+      "size_new": 822016,
+      "size_delta": -274056
+    },
+    {
+      "name": "libuv",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.52.1-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.52.1"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1059928,
+      "size_new": 669192,
+      "size_delta": -390736
+    },
+    {
+      "name": "libvmaf",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.0.0"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 8375232,
+      "size_new": 5583488,
+      "size_delta": -2791744
+    },
+    {
+      "name": "libwebp",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.6.0"
+          },
+          "old_amount": 6,
+          "new_amount": 4
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 14155712,
+      "size_new": 10601184,
+      "size_delta": -3554528
+    },
+    {
+      "name": "libx11",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.8.13"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 12015888,
+      "size_new": 9315648,
+      "size_delta": -2700240
+    },
+    {
+      "name": "libxau",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.0.12"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 118168,
+      "size_new": 90376,
+      "size_delta": -27792
+    },
+    {
+      "name": "libxcb",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.17.0"
+          },
+          "old_amount": 5,
+          "new_amount": 4
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 10599912,
+      "size_new": 9150648,
+      "size_delta": -1449264
+    },
+    {
+      "name": "libxcomposite",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.4.7"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 83280,
+      "size_new": 57600,
+      "size_delta": -25680
+    },
+    {
+      "name": "libxcrypt",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "4.5.2"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 564256,
+      "size_new": 419872,
+      "size_delta": -144384
+    },
+    {
+      "name": "libxcursor",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.2.3"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 254912,
+      "size_new": 175088,
+      "size_delta": -79824
+    },
+    {
+      "name": "libxdamage",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.1.7"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 59736,
+      "size_new": 41368,
+      "size_delta": -18368
+    },
+    {
+      "name": "libxdmcp",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.1.5"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 138160,
+      "size_new": 106248,
+      "size_delta": -31912
+    },
+    {
+      "name": "libxext",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.3.7"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 502888,
+      "size_new": 406944,
+      "size_delta": -95944
+    },
+    {
+      "name": "libxfixes",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.0.2"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 114200,
+      "size_new": 79464,
+      "size_delta": -34736
+    },
+    {
+      "name": "libxft",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.3.9"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 484440,
+      "size_new": 329768,
+      "size_delta": -154672
+    },
+    {
+      "name": "libxi",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.8.2"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 423280,
+      "size_new": 333504,
+      "size_delta": -89776
+    },
+    {
+      "name": "libxinerama",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.1.6"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 74096,
+      "size_new": 51856,
+      "size_delta": -22240
+    },
+    {
+      "name": "libxkbcommon",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.13.1"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 5388792,
+      "size_new": 4312128,
+      "size_delta": -1076664
+    },
+    {
+      "name": "libxml2",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "2.15.2",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.15.1"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 9593800,
+      "size_new": 9585400,
+      "size_delta": -8400
+    },
+    {
+      "name": "libxrandr",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.5.5"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 211712,
+      "size_new": 147600,
+      "size_delta": -64112
+    },
+    {
+      "name": "libxrender",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.9.12"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 199672,
+      "size_new": 145168,
+      "size_delta": -54504
+    },
+    {
+      "name": "libxtst",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.2.5"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 361200,
+      "size_new": 240800,
+      "size_delta": -120400
+    },
+    {
+      "name": "libyuv",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1908"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 8133088,
+      "size_new": 4066544,
+      "size_delta": -4066544
+    },
+    {
+      "name": "llhttp",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "9.3.0",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "9.4.1-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "9.4.1"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 268720,
+      "size_new": 221808,
+      "size_delta": -46912
+    },
+    {
+      "name": "lowdown",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "2.0.4-lib",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 349392,
+      "size_new": 670120,
+      "size_delta": 320728
+    },
+    {
+      "name": "lzo",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.10"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 490488,
+      "size_new": 326992,
+      "size_delta": -163496
+    },
+    {
+      "name": "mailcap",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.1.54"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 477440,
+      "size_new": 358080,
+      "size_delta": -119360
+    },
+    {
+      "name": "man-cache",
+      "versions": [],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 132880,
+      "size_new": 120592,
+      "size_delta": -12288
+    },
+    {
+      "name": "ncurses",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.6"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 16410720,
+      "size_new": 12540160,
+      "size_delta": -3870560
+    },
+    {
+      "name": "nettle",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.10.2"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 2950872,
+      "size_new": 2210024,
+      "size_delta": -740848
+    },
+    {
+      "name": "nghttp2",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "1.65.0-lib",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.68.1-lib"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.69.0-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.69.0-lib"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.69.0"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 7102032,
+      "size_new": 3890096,
+      "size_delta": -3211936
+    },
+    {
+      "name": "nghttp3",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.15.0-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 941576,
+      "size_new": 804608,
+      "size_delta": -136968
+    },
+    {
+      "name": "ngtcp2",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.22.1-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 2566632,
+      "size_new": 2251296,
+      "size_delta": -315336
+    },
+    {
+      "name": "nil-unstable",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "2025-12-10",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Removed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 9187480,
+      "size_new": 0,
+      "size_delta": -9187480
+    },
+    {
+      "name": "nix-nswrapper",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "3.21.8",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 134976,
+      "size_new": 269704,
+      "size_delta": 134728
+    },
+    {
+      "name": "nixfmt-unstable",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "2025-04-04",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Removed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 4847488,
+      "size_new": 0,
+      "size_delta": -4847488
+    },
+    {
+      "name": "nodejs",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "24.15.0",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1604496,
+      "size_new": 826280,
+      "size_delta": -778216
+    },
+    {
+      "name": "nodejs-slim",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "24.15.0-corepack",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "removed",
+          "version": {
+            "name": "24.15.0-npm",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "removed",
+          "version": {
+            "name": "24.15.0",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 200505248,
+      "size_new": 100946424,
+      "size_delta": -99558824
+    },
+    {
+      "name": "numactl",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.0.18"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 829224,
+      "size_new": 552816,
+      "size_delta": -276408
+    },
+    {
+      "name": "nvd",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "0.2.4",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Removed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 50608,
+      "size_new": 0,
+      "size_delta": -50608
+    },
+    {
+      "name": "onetbb",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2022.3.0"
+          },
+          "old_amount": 1,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 641160,
+      "size_new": 1291080,
+      "size_delta": 649920
+    },
+    {
+      "name": "oniguruma",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.9.10-lib"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 2128752,
+      "size_new": 1419168,
+      "size_delta": -709584
+    },
+    {
+      "name": "openexr",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "3.4.10",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 18832384,
+      "size_new": 14943856,
+      "size_delta": -3888528
+    },
+    {
+      "name": "openssl",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "3.4.1",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.6.2-bin"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.6.2-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 55024912,
+      "size_new": 43395320,
+      "size_delta": -11629592
+    },
+    {
+      "name": "p11-kit",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.26.2"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 23753056,
+      "size_new": 17766040,
+      "size_delta": -5987016
+    },
+    {
+      "name": "pango",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.57.1"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 5450344,
+      "size_new": 4510968,
+      "size_delta": -939376
+    },
+    {
+      "name": "perl",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "5.42.0"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 236642096,
+      "size_new": 178934168,
+      "size_delta": -57707928
+    },
+    {
+      "name": "perl5.42.0-Clone",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.46"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 67704,
+      "size_new": 45136,
+      "size_delta": -22568
+    },
+    {
+      "name": "perl5.42.0-Encode-Locale",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.05"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 46416,
+      "size_new": 30944,
+      "size_delta": -15472
+    },
+    {
+      "name": "perl5.42.0-File-BaseDir",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.09"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 58056,
+      "size_new": 38704,
+      "size_delta": -19352
+    },
+    {
+      "name": "perl5.42.0-File-DesktopEntry",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.22"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 83544,
+      "size_new": 55696,
+      "size_delta": -27848
+    },
+    {
+      "name": "perl5.42.0-File-Listing",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.16"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 52992,
+      "size_new": 35328,
+      "size_delta": -17664
+    },
+    {
+      "name": "perl5.42.0-File-MimeInfo",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.33"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 241992,
+      "size_new": 161328,
+      "size_delta": -80664
+    },
+    {
+      "name": "perl5.42.0-HTML-Parser",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.81"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 473280,
+      "size_new": 315520,
+      "size_delta": -157760
+    },
+    {
+      "name": "perl5.42.0-HTML-Tagset",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.20"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 48144,
+      "size_new": 32096,
+      "size_delta": -16048
+    },
+    {
+      "name": "perl5.42.0-HTTP-CookieJar",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.014"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 78312,
+      "size_new": 52208,
+      "size_delta": -26104
+    },
+    {
+      "name": "perl5.42.0-HTTP-Cookies",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.10"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 124104,
+      "size_new": 82736,
+      "size_delta": -41368
+    },
+    {
+      "name": "perl5.42.0-HTTP-Daemon",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.16"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 104152,
+      "size_new": 69760,
+      "size_delta": -34392
+    },
+    {
+      "name": "perl5.42.0-HTTP-Date",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.06"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 46512,
+      "size_new": 31008,
+      "size_delta": -15504
+    },
+    {
+      "name": "perl5.42.0-HTTP-Message",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.45"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 436056,
+      "size_new": 290704,
+      "size_delta": -145352
+    },
+    {
+      "name": "perl5.42.0-HTTP-Negotiate",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.01"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 59064,
+      "size_new": 39376,
+      "size_delta": -19688
+    },
+    {
+      "name": "perl5.42.0-IO-HTML",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.004"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 68304,
+      "size_new": 45536,
+      "size_delta": -22768
+    },
+    {
+      "name": "perl5.42.0-IPC-System-Simple",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.30"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 112176,
+      "size_new": 74784,
+      "size_delta": -37392
+    },
+    {
+      "name": "perl5.42.0-LWP-MediaTypes",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.04"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 180504,
+      "size_new": 120336,
+      "size_delta": -60168
+    },
+    {
+      "name": "perl5.42.0-Net-DBus",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.2.0"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1429320,
+      "size_new": 952880,
+      "size_delta": -476440
+    },
+    {
+      "name": "perl5.42.0-Net-HTTP",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.23"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 116088,
+      "size_new": 77392,
+      "size_delta": -38696
+    },
+    {
+      "name": "perl5.42.0-Test-Fatal",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.017"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 56688,
+      "size_new": 37792,
+      "size_delta": -18896
+    },
+    {
+      "name": "perl5.42.0-Test-Needs",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.002010"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 35208,
+      "size_new": 23472,
+      "size_delta": -11736
+    },
+    {
+      "name": "perl5.42.0-Test-RequiresInternet",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.05"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 18384,
+      "size_new": 12256,
+      "size_delta": -6128
+    },
+    {
+      "name": "perl5.42.0-TimeDate",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.33"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 270744,
+      "size_new": 180496,
+      "size_delta": -90248
+    },
+    {
+      "name": "perl5.42.0-Try-Tiny",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.31"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 72648,
+      "size_new": 48432,
+      "size_delta": -24216
+    },
+    {
+      "name": "perl5.42.0-URI",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "5.21"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 485832,
+      "size_new": 323888,
+      "size_delta": -161944
+    },
+    {
+      "name": "perl5.42.0-WWW-RobotRules",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.02"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 56928,
+      "size_new": 37952,
+      "size_delta": -18976
+    },
+    {
+      "name": "perl5.42.0-X11-Protocol",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.56"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 751200,
+      "size_new": 500800,
+      "size_delta": -250400
+    },
+    {
+      "name": "perl5.42.0-XML-Parser",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.46"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1316952,
+      "size_new": 877968,
+      "size_delta": -438984
+    },
+    {
+      "name": "perl5.42.0-XML-Twig",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.52"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1544400,
+      "size_new": 1029600,
+      "size_delta": -514800
+    },
+    {
+      "name": "perl5.42.0-libwww-perl",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.72"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 897936,
+      "size_new": 598624,
+      "size_delta": -299312
+    },
+    {
+      "name": "pixman",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.46.4"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 3472128,
+      "size_new": 2593216,
+      "size_delta": -878912
+    },
+    {
+      "name": "procps",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "4.0.6"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 9377184,
+      "size_new": 6251456,
+      "size_delta": -3125728
+    },
+    {
+      "name": "publicsuffix-list",
+      "versions": [
+        {
+          "kind": "changed",
+          "old": {
+            "name": "0-unstable-2025-03-12",
+            "amount": 1
+          },
+          "new": {
+            "name": "0-unstable-2026-01-25",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0-unstable-2026-03-26"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1654272,
+      "size_new": 1330072,
+      "size_delta": -324200
+    },
+    {
+      "name": "readline",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "8.3p3"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1997760,
+      "size_new": 1491368,
+      "size_delta": -506392
+    },
+    {
+      "name": "ripgrep",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "15.1.0"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 13066656,
+      "size_new": 6536032,
+      "size_delta": -6530624
+    },
+    {
+      "name": "s2n-tls",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "1.5.27",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1411944,
+      "size_new": 2889120,
+      "size_delta": 1477176
+    },
+    {
+      "name": "sentry-native",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "0.13.5",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 2141128,
+      "size_delta": 2141128
+    },
+    {
+      "name": "set-java-classpath-hook",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "<none>"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 1584,
+      "size_new": 792,
+      "size_delta": -792
+    },
+    {
+      "name": "shared-mime-info",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.4"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 23475888,
+      "size_new": 15650856,
+      "size_delta": -7825032
+    },
+    {
+      "name": "simdjson",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "4.6.0",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 15915744,
+      "size_new": 7970216,
+      "size_delta": -7945528
+    },
+    {
+      "name": "simdutf",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "6.5.0"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "9.0.0"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 6241936,
+      "size_new": 3120968,
+      "size_delta": -3120968
+    },
+    {
+      "name": "sqlite",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "3.50.4",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.51.2-bin"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.51.2-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.51.2"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 31125256,
+      "size_new": 26305368,
+      "size_delta": -4819888
+    },
+    {
+      "name": "systemd-minimal",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "260.1"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 80242408,
+      "size_new": 59209792,
+      "size_delta": -21032616
+    },
+    {
+      "name": "systemd-minimal-libs",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "260.1"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 14879944,
+      "size_new": 10678112,
+      "size_delta": -4201832
+    },
+    {
+      "name": "tinysparql",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "3.11.1"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 19595584,
+      "size_new": 14665112,
+      "size_delta": -4930472
+    },
+    {
+      "name": "tzdata",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2026b"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 8586208,
+      "size_new": 6437888,
+      "size_delta": -2148320
+    },
+    {
+      "name": "unbound",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "1.25.0-lib",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 4677392,
+      "size_new": 3495376,
+      "size_delta": -1182016
+    },
+    {
+      "name": "utf8proc",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.11.3"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 805888,
+      "size_new": 402944,
+      "size_delta": -402944
+    },
+    {
+      "name": "util-linux-minimal",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.42-lib"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.42-login"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.42-mount"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.42-swap"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 19253496,
+      "size_new": 16744800,
+      "size_delta": -2508696
+    },
+    {
+      "name": "uvwasi",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.0.23"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 487488,
+      "size_new": 243744,
+      "size_delta": -243744
+    },
+    {
+      "name": "vimplugin-nvim-treesitter",
+      "versions": [],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 6556080,
+      "size_new": 7400304,
+      "size_delta": 844224
+    },
+    {
+      "name": "wasmtime",
+      "versions": [
+        {
+          "kind": "added",
+          "version": {
+            "name": "40.0.2-lib",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Added",
+      "selection": "Unselected",
+      "has_omitted_versions": false,
+      "size_old": 0,
+      "size_new": 20918112,
+      "size_delta": 20918112
+    },
+    {
+      "name": "wayland",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.25.0"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1862040,
+      "size_new": 1591576,
+      "size_delta": -270464
+    },
+    {
+      "name": "which",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.23"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 113480,
+      "size_new": 76424,
+      "size_delta": -37056
+    },
+    {
+      "name": "wl-clipboard",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.3.0"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 396320,
+      "size_new": 199128,
+      "size_delta": -197192
+    },
+    {
+      "name": "xdg-user-dirs",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.20-lib"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "0.20"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 729216,
+      "size_new": 483176,
+      "size_delta": -246040
+    },
+    {
+      "name": "xdg-utils",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.2.1"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1553400,
+      "size_new": 1157464,
+      "size_delta": -395936
+    },
+    {
+      "name": "xgcc",
+      "versions": [
+        {
+          "kind": "changed",
+          "old": {
+            "name": "14.2.1.20250322-libgcc",
+            "amount": 1
+          },
+          "new": {
+            "name": "14.3.0-libgcc",
+            "amount": 1
+          }
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "15.2.0-libgcc"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Upgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1194400,
+      "size_new": 996720,
+      "size_delta": -197680
+    },
+    {
+      "name": "xkeyboard-config",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "2.47"
+          },
+          "old_amount": 4,
+          "new_amount": 3
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 50208000,
+      "size_new": 39392464,
+      "size_delta": -10815536
+    },
+    {
+      "name": "xz",
+      "versions": [
+        {
+          "kind": "removed",
+          "version": {
+            "name": "5.8.1",
+            "amount": 1
+          }
+        }
+      ],
+      "status": "Downgraded",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 5122104,
+      "size_new": 4264144,
+      "size_delta": -857960
+    },
+    {
+      "name": "zlib",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.3.1"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.3.2-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.3.2-static"
+          },
+          "old_amount": 3,
+          "new_amount": 2
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 1499280,
+      "size_new": 1091296,
+      "size_delta": -407984
+    },
+    {
+      "name": "zstd",
+      "versions": [
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.5.7-bin"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.5.7-dev"
+          },
+          "old_amount": 2,
+          "new_amount": 1
+        },
+        {
+          "kind": "amount_changed",
+          "version": {
+            "name": "1.5.7"
+          },
+          "old_amount": 5,
+          "new_amount": 4
+        }
+      ],
+      "status": "Changed",
+      "selection": "Unselected",
+      "has_omitted_versions": true,
+      "size_old": 8795424,
+      "size_new": 6990752,
+      "size_delta": -1804672
+    }
+  ],
+  "paths": {
+    "old": 2663,
+    "new": 2482,
+    "added": 196,
+    "removed": 377
+  },
+  "size_old": 19800963992,
+  "size_new": 19217325536
+}

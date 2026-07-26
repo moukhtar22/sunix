@@ -1,0 +1,26 @@
+[package]
+name = "sunix"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+description = "A GTK4 layer-shell popup for Nix flake software update summaries"
+homepage = "https://github.com/gvolpe/sunix"
+repository = "https://github.com/gvolpe/sunix"
+readme = "README.md"
+license = "MIT"
+keywords = ["nix", "nixos", "home-manager", "gtk", "wayland"]
+categories = ["command-line-utilities", "gui"]
+include = [
+  "/Cargo.lock",
+  "/Cargo.toml",
+  "/LICENSE",
+  "/README.md",
+  "/assets/**",
+  "/src/**",
+]
+
+[dependencies]
+gtk = { package = "gtk4", version = "0.11" }
+gtk4-layer-shell = "0.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
