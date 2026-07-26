@@ -25,8 +25,8 @@
 
       homeModules.default = import ./nix/hm.nix { inherit self; };
 
-      overlays.default = f: p: {
-        sunix = p.callPackage ./nix/drv.nix { };
+      overlays.default = final: prev: {
+        sunix = prev.callPackage ./nix/drv.nix { };
       };
 
       packages = forAllSystems (system:
