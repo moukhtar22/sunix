@@ -41,7 +41,7 @@ pub fn run(config: Result<SunixConfig, String>) -> gtk::glib::ExitCode {
     app.connect_startup(|_| load_css());
     app.connect_activate(move |app| build_ui(app, Rc::clone(&state)));
 
-    app.run()
+    app.run_with_args(&["sunix"])
 }
 
 fn load_css() {

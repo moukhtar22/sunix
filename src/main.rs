@@ -1,5 +1,6 @@
 use gtk::glib;
 
+mod cli;
 mod config;
 mod dix;
 mod format;
@@ -7,9 +8,26 @@ mod model;
 mod ui;
 
 fn main() -> glib::ExitCode {
+    let options = match cli::CliOptions::parse(std::env::args().skip(1)) {
+        Ok(options) => options,
+        Err(err) => {
+            eprintln!("{err}");
+            eprintln!("{}", cli::usage());
+            return glib::ExitCode::FAILURE;
+        }
+    };
+
+    if options.help {
+        println!("{}", cli::usage());
+        return glib::ExitCode::SUCCESS;
+    }
+
     default_to_gl_renderer();
 
-    let config = config::load_config();
+    let config = config::load_config().map(|mut config| {
+        config.show_demo |= options.demo;
+        config
+    });
 
     ui::run(config)
 }

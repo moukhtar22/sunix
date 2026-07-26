@@ -102,7 +102,7 @@ So that the `dix` binary is only available to SUNix.
 
 ### Demo
 
-Set `show_demo=true` to reveal a "Demo" button that renders the bundled `sample.json` report, which is also used for testing.
+Set `show_demo=true` to reveal a "Demo" button that renders the bundled `sample.json` report. Alternatively, you can also run `sunix --demo` which will ignore the configuration value.
 
 ## Develop
 
