@@ -136,28 +136,30 @@ window.update-popup {
 }
 
 .back-button {
-  background-color: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(222, 226, 230, 0.16);
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: 6px;
-  color: #c2cad3;
-  font-size: 18px;
-  font-weight: 700;
-  min-height: 42px;
-  min-width: 96px;
+  color: #8d98a6;
+  min-height: 40px;
+  min-width: 40px;
   margin-right: 16px;
   margin-top: 16px;
-  padding: 0 16px;
+  padding: 0;
 }
 
 .back-button:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(222, 226, 230, 0.26);
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(222, 226, 230, 0.16);
   color: #e7ebef;
 }
 
 .back-button:active {
   background-color: rgba(82, 145, 224, 0.14);
   border-color: rgba(158, 197, 255, 0.38);
+}
+
+.back-button image {
+  -gtk-icon-size: 20px;
 }
 
 .title {

@@ -21,11 +21,12 @@ pub(super) fn back_button(
     root: &gtk::Box,
     state: Rc<AppState>,
 ) -> gtk::Button {
-    let button = gtk::Button::with_label("Back 🔙");
+    let button = gtk::Button::from_icon_name("go-previous-symbolic");
     button.add_css_class("back-button");
     button.set_focus_on_click(false);
     button.set_halign(gtk::Align::End);
     button.set_valign(gtk::Align::Start);
+    button.set_tooltip_text(Some("Back"));
 
     let window = window.clone();
     let root = root.clone();

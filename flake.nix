@@ -1,5 +1,5 @@
 {
-  description = "Sunix GTK4 layer-shell software update popup";
+  description = "SUNix: GTK4 layer-shell software update popup";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
