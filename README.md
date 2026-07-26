@@ -1,6 +1,10 @@
 # SUNix (Software Updates for Nix)
 
-`sunix` is a small GTK4 layer-shell popup for Wayland compositors that support `wlr-layer-shell`. It shows the expected changes before a NixOS or Home Manager switch is applied, using [dix](https://github.com/manic-systems/dix) under the hood.
+[![nix-badge](https://img.shields.io/static/v1?label=Built%20with&message=Nix&color=blue&style=flat&logo=nixos&link=https://nixos.org&labelColor=111212)](https://gvolpe.com)
+[![rust-badge](https://img.shields.io/static/v1?label=Powered%20by&message=Rust&color=orange&style=flat&logo=rust&link=https://nixos.org&labelColor=111212)](https://gvolpe.com)
+[![Build](https://github.com/gvolpe/sunix/actions/workflows/ci.yml/badge.svg)](https://github.com/gvolpe/sunix/actions/workflows/ci.yml)
+
+A small GTK4 layer-shell popup for Wayland compositors that support `wlr-layer-shell`. It shows the expected changes before a NixOS or Home Manager switch is applied, using [dix](https://github.com/manic-systems/dix) under the hood.
 
 ## Install
 
