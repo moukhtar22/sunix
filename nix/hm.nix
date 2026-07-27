@@ -18,6 +18,7 @@ let
     home_flake = settings.homeFlake;
     nixos_flake = settings.nixosFlake;
     dix_binary = settings.dixBinary;
+    style_css = settings.styleCss;
     show_demo = settings.showDemo;
   };
 in
@@ -78,6 +79,16 @@ in
         description = "Path to the dix executable. When unset, SUNix uses dix from PATH.";
       };
 
+      styleCss = lib.mkOption {
+        type = lib.types.nullOr lib.types.str;
+        default = null;
+        example = "$HOME/.config/sunix/style.css";
+        description = ''
+          Path to a custom GTK CSS file to use instead of SUNix's bundled
+          stylesheet.
+        '';
+      };
+
       showDemo = lib.mkOption {
         type = lib.types.bool;
         default = false;
@@ -111,6 +122,10 @@ in
       {
         assertion = settings.dixBinary == null || settings.dixBinary != "";
         message = "programs.sunix.settings.dixBinary must not be empty when set.";
+      }
+      {
+        assertion = settings.styleCss == null || settings.styleCss != "";
+        message = "programs.sunix.settings.styleCss must not be empty when set.";
       }
     ];
 

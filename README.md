@@ -29,6 +29,7 @@ modules = [ inputs.sunix.homeModules.default ];
       flakeDir = "$HOME/workspace/sxm-flake";
       homeFlake = "niri";
       nixosFlake = "aorus";
+      styleCss = null;
       showDemo = false;
     };
   };
@@ -103,6 +104,16 @@ So that the `dix` binary is only available to SUNix.
 ### Demo
 
 Set `show_demo=true` to reveal a "Demo" button that renders the bundled `sample.json` report. Alternatively, you can also run `sunix --demo` which will ignore the configuration value.
+
+### Style
+
+SUNix uses the bundled `assets/style.css` by default. If you'd like to use a custom CSS file, set the following option:
+
+```toml
+style_css=/path/to/custom-style.css
+```
+
+**NOTE**: this should be a full replacement, so a good starting point would be to copy `assets/style.css` and make your own adjustments.
 
 ## Develop
 

@@ -1,3 +1,4 @@
+use std::fs;
 use std::rc::Rc;
 
 use gtk::gdk;
@@ -35,19 +36,55 @@ const REPORT_WINDOW_HEIGHT: i32 = 980;
 const CSS: &str = include_str!("../assets/style.css");
 
 pub fn run(config: Result<SunixConfig, String>) -> gtk::glib::ExitCode {
+    let (config, style_css) = prepare_style_css(config);
     let app = gtk::Application::builder().application_id(APP_ID).build();
     let state = Rc::new(AppState::new(config));
 
-    app.connect_startup(|_| load_css());
+    app.connect_startup(move |_| load_css(&style_css));
     app.connect_activate(move |app| build_ui(app, Rc::clone(&state)));
 
     app.run_with_args(&["sunix"])
 }
 
-fn load_css() {
+#[derive(Clone, Debug)]
+enum StyleCss {
+    Default,
+    Custom(String),
+}
+
+fn prepare_style_css(
+    config: Result<SunixConfig, String>,
+) -> (Result<SunixConfig, String>, StyleCss) {
+    match config {
+        Ok(config) => {
+            let Some(path) = config.style_css.clone() else {
+                return (Ok(config), StyleCss::Default);
+            };
+
+            match fs::read_to_string(&path) {
+                Ok(css) => (Ok(config), StyleCss::Custom(css)),
+                Err(err) => (
+                    Err(format!(
+                        "failed to read style_css {}: {err}",
+                        path.display()
+                    )),
+                    StyleCss::Default,
+                ),
+            }
+        }
+        Err(message) => (Err(message), StyleCss::Default),
+    }
+}
+
+fn load_css(style_css: &StyleCss) {
     let provider = gtk::CssProvider::new();
+    let css = match style_css {
+        StyleCss::Default => CSS,
+        StyleCss::Custom(css) => css,
+    };
+
     #[allow(deprecated)]
-    provider.load_from_data(CSS);
+    provider.load_from_data(css);
 
     if let Some(display) = gdk::Display::default() {
         gtk::style_context_add_provider_for_display(

@@ -11,6 +11,7 @@ pub struct SunixConfig {
     pub home_flake: String,
     pub nixos_flake: String,
     pub dix_binary: Option<PathBuf>,
+    pub style_css: Option<PathBuf>,
     pub show_demo: bool,
 }
 
@@ -76,6 +77,7 @@ fn parse_config(content: &str, source: &Path) -> Result<SunixConfig, String> {
     let home_flake = required_field(&values, "home_flake", source)?;
     let nixos_flake = required_field(&values, "nixos_flake", source)?;
     let dix_binary = optional_path_field(&values, "dix_binary");
+    let style_css = optional_path_field(&values, "style_css");
     let show_demo = optional_bool_field(&values, "show_demo", source)?;
 
     Ok(SunixConfig {
@@ -85,6 +87,7 @@ fn parse_config(content: &str, source: &Path) -> Result<SunixConfig, String> {
         home_flake,
         nixos_flake,
         dix_binary,
+        style_css,
         show_demo,
     })
 }
@@ -215,6 +218,7 @@ nixos_flake=aorus
         assert_eq!(config.home_flake_dir(), config.flake_dir.as_path());
         assert_eq!(config.nixos_flake_dir(), config.flake_dir.as_path());
         assert_eq!(config.dix_binary, None);
+        assert_eq!(config.style_css, None);
         assert!(!config.show_demo);
     }
 
@@ -238,6 +242,7 @@ nixos_flake = 'aorus'
         assert_eq!(config.home_flake_dir(), config.flake_dir.as_path());
         assert_eq!(config.nixos_flake_dir(), config.flake_dir.as_path());
         assert_eq!(config.dix_binary, None);
+        assert_eq!(config.style_css, None);
         assert!(!config.show_demo);
     }
 
@@ -330,6 +335,41 @@ dix_binary=
 
         assert_eq!(config.dix_binary, None);
         assert!(!config.show_demo);
+    }
+
+    #[test]
+    fn parses_optional_style_css() {
+        let config = parse_config(
+            "\
+flake_dir=$HOME/workspace/nix-config
+home_flake=niri-hdmi
+nixos_flake=aorus
+style_css=$HOME/.config/sunix/style.css
+",
+            Path::new("sunix.toml"),
+        )
+        .unwrap();
+
+        assert_eq!(
+            config.style_css,
+            Some(expand_home_path("$HOME/.config/sunix/style.css"))
+        );
+    }
+
+    #[test]
+    fn ignores_empty_optional_style_css() {
+        let config = parse_config(
+            "\
+flake_dir=$HOME/workspace/nix-config
+home_flake=niri-hdmi
+nixos_flake=aorus
+style_css=
+",
+            Path::new("sunix.toml"),
+        )
+        .unwrap();
+
+        assert_eq!(config.style_css, None);
     }
 
     #[test]
