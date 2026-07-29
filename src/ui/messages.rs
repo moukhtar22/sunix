@@ -43,7 +43,7 @@ pub(super) fn show_loading_message(
     title: &str,
     source: ReportSource,
     flake: &str,
-) {
+) -> LoadingLog {
     window.set_default_size(MESSAGE_WINDOW_WIDTH, MESSAGE_WINDOW_HEIGHT);
     window.set_size_request(MESSAGE_MIN_WINDOW_WIDTH, MESSAGE_MIN_WINDOW_HEIGHT);
 
@@ -69,10 +69,14 @@ pub(super) fn show_loading_message(
     container.append(&spinner);
 
     container.append(&loading_message(source, flake));
+    let log = loading_log();
+    container.append(log.widget());
 
     root.append(&container);
     root.append(&close_key_hints());
     root.queue_resize();
+
+    log
 }
 
 fn loading_message(source: ReportSource, flake: &str) -> gtk::Box {
@@ -95,6 +99,46 @@ fn loading_message(source: ReportSource, flake: &str) -> gtk::Box {
         0.0,
     ));
     message
+}
+
+#[derive(Clone)]
+pub(super) struct LoadingLog {
+    container: gtk::Box,
+    lines: Vec<gtk::Label>,
+}
+
+impl LoadingLog {
+    pub(super) fn set_lines(&self, lines: &[&str]) {
+        for (index, label) in self.lines.iter().enumerate() {
+            label.set_text(lines.get(index).copied().unwrap_or(""));
+        }
+    }
+
+    fn widget(&self) -> &gtk::Box {
+        &self.container
+    }
+}
+
+fn loading_log() -> LoadingLog {
+    let container = gtk::Box::new(gtk::Orientation::Vertical, 0);
+    container.add_css_class("loading-log");
+    container.set_halign(gtk::Align::Fill);
+    container.set_hexpand(true);
+    container.set_overflow(gtk::Overflow::Hidden);
+
+    let mut lines = Vec::with_capacity(6);
+    for _ in 0..6 {
+        let line = label("", &["loading-log-line"], 0.0);
+        line.set_ellipsize(gtk::pango::EllipsizeMode::End);
+        line.set_lines(1);
+        line.set_max_width_chars(72);
+        line.set_single_line_mode(true);
+        line.set_wrap(false);
+        container.append(&line);
+        lines.push(line);
+    }
+
+    LoadingLog { container, lines }
 }
 
 fn show_message(

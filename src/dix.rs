@@ -1,8 +1,10 @@
 use std::path::Path;
-use std::process::{Command, Output};
+use std::process::Command;
+use std::sync::mpsc;
 
 use serde::Deserialize;
 
+use crate::command::{run_command, run_command_with_logs};
 use crate::config::SunixConfig;
 use crate::format::{format_signed_bytes, format_version_change, format_versions};
 use crate::model::{
@@ -10,7 +12,6 @@ use crate::model::{
 };
 
 const DEMO_FLAKE: &str = "demo";
-const MAX_COMMAND_OUTPUT_CHARS: usize = 4_000;
 
 pub fn demo_report() -> UpdateReport {
     parse_report_json(
@@ -21,7 +22,17 @@ pub fn demo_report() -> UpdateReport {
     .expect("embedded sample.json must parse")
 }
 
-pub fn home_manager_report(config: &SunixConfig) -> Result<UpdateReport, String> {
+pub fn home_manager_report_with_logs(
+    config: &SunixConfig,
+    logs: mpsc::Sender<String>,
+) -> Result<UpdateReport, String> {
+    home_manager_report(config, Some(&logs))
+}
+
+fn home_manager_report(
+    config: &SunixConfig,
+    logs: Option<&mpsc::Sender<String>>,
+) -> Result<UpdateReport, String> {
     let flake_dir = config.home_flake_dir();
     let generations_output = run_command(
         Command::new("home-manager")
@@ -36,10 +47,27 @@ pub fn home_manager_report(config: &SunixConfig) -> Result<UpdateReport, String>
         config.home_flake
     );
 
-    build_diff_report(config, flake_dir, &attr, old_generation, &config.home_flake)
+    build_diff_report(
+        config,
+        flake_dir,
+        &attr,
+        old_generation,
+        &config.home_flake,
+        logs,
+    )
 }
 
-pub fn nixos_report(config: &SunixConfig) -> Result<UpdateReport, String> {
+pub fn nixos_report_with_logs(
+    config: &SunixConfig,
+    logs: mpsc::Sender<String>,
+) -> Result<UpdateReport, String> {
+    nixos_report(config, Some(&logs))
+}
+
+fn nixos_report(
+    config: &SunixConfig,
+    logs: Option<&mpsc::Sender<String>>,
+) -> Result<UpdateReport, String> {
     let flake_dir = config.nixos_flake_dir();
     let attr = format!(
         ".#nixosConfigurations.{}.config.system.build.toplevel",
@@ -52,6 +80,7 @@ pub fn nixos_report(config: &SunixConfig) -> Result<UpdateReport, String> {
         &attr,
         "/run/current-system/",
         &config.nixos_flake,
+        logs,
     )
 }
 
@@ -61,8 +90,9 @@ fn build_diff_report(
     attr: &str,
     old_path: &str,
     flake: &str,
+    logs: Option<&mpsc::Sender<String>>,
 ) -> Result<UpdateReport, String> {
-    let output_paths = nix_build_output_paths(attr, flake_dir)?;
+    let output_paths = nix_build_output_paths(attr, flake_dir, logs)?;
 
     let dix_binary = dix_binary(config);
     let dix_output = run_command(
@@ -81,7 +111,11 @@ fn build_diff_report(
     parse_report_json(&json, &format!("dix output for `{flake}`"), flake)
 }
 
-fn nix_build_output_paths(attr: &str, flake_dir: &Path) -> Result<Vec<String>, String> {
+fn nix_build_output_paths(
+    attr: &str,
+    flake_dir: &Path,
+    logs: Option<&mpsc::Sender<String>>,
+) -> Result<Vec<String>, String> {
     let mut command = Command::new("nix");
     command
         .arg("build")
@@ -89,9 +123,10 @@ fn nix_build_output_paths(attr: &str, flake_dir: &Path) -> Result<Vec<String>, S
         .arg("--no-link")
         .arg(attr);
 
-    let output = run_command(
+    let output = run_command_with_logs(
         command.current_dir(flake_dir),
         &format!("nix build {attr} in {}", flake_dir.display()),
+        logs,
     )?;
     let output_paths = String::from_utf8_lossy(&output.stdout)
         .split_whitespace()
@@ -132,49 +167,6 @@ pub fn parse_report_json(content: &str, source: &str, flake: &str) -> Result<Upd
     serde_json::from_str::<DixReport>(content)
         .map(|report| report.into_update_report(flake))
         .map_err(|err| format!("failed to parse {source}: {err}"))
-}
-
-fn run_command(command: &mut Command, description: &str) -> Result<Output, String> {
-    let output = command
-        .output()
-        .map_err(|err| format!("failed to run {description}: {err}"))?;
-
-    if output.status.success() {
-        Ok(output)
-    } else {
-        Err(command_failure(description, &output))
-    }
-}
-
-fn command_failure(description: &str, output: &Output) -> String {
-    let mut message = format!("{description} failed with {}", output.status);
-    append_output(&mut message, "stdout", &output.stdout);
-    append_output(&mut message, "stderr", &output.stderr);
-    message
-}
-
-fn append_output(message: &mut String, label: &str, output: &[u8]) {
-    let text = String::from_utf8_lossy(output);
-    let text = text.trim();
-
-    if text.is_empty() {
-        return;
-    }
-
-    message.push_str("\n\n");
-    message.push_str(label);
-    message.push_str(":\n");
-    message.push_str(&truncate(text, MAX_COMMAND_OUTPUT_CHARS));
-}
-
-fn truncate(text: &str, max_chars: usize) -> String {
-    if text.chars().count() <= max_chars {
-        return text.to_owned();
-    }
-
-    let mut truncated = text.chars().take(max_chars).collect::<String>();
-    truncated.push_str("\n...");
-    truncated
 }
 
 #[derive(Debug, Deserialize)]
@@ -275,10 +267,11 @@ impl From<DixPaths> for PathSummary {
 
 impl DixDiff {
     fn into_package_change(self, status: &ChangeStatus) -> PackageChange {
-        let version_change = status
-            .has_old_new_versions()
-            .then(|| format_version_change(status, &self.versions, self.has_omitted_versions))
-            .unwrap_or_default();
+        let version_change = if status.has_old_new_versions() {
+            format_version_change(status, &self.versions, self.has_omitted_versions)
+        } else {
+            Default::default()
+        };
 
         PackageChange {
             name: self.name,

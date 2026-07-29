@@ -1,3 +1,4 @@
+use std::collections::VecDeque;
 use std::rc::Rc;
 use std::sync::mpsc::{self, TryRecvError};
 use std::thread;
@@ -7,7 +8,7 @@ use gtk::gdk;
 use gtk::prelude::*;
 
 use crate::config::SunixConfig;
-use crate::dix::{demo_report, home_manager_report, nixos_report};
+use crate::dix::{demo_report, home_manager_report_with_logs, nixos_report_with_logs};
 use crate::model::UpdateReport;
 
 use super::APP_TITLE;
@@ -189,20 +190,22 @@ fn show_report_loading(
     state.set_view(ViewState::Loading);
     state.clear_scroll_adjustment();
     let flake = source.flake(&config).to_owned();
-    show_loading_message(window, root, APP_TITLE, source, &flake);
+    let loading_log = show_loading_message(window, root, APP_TITLE, source, &flake);
 
-    let (sender, receiver) = mpsc::channel();
+    let (report_sender, report_receiver) = mpsc::channel();
+    let (log_sender, log_receiver) = mpsc::channel();
     thread::spawn(move || {
         let report = match source {
-            ReportSource::HomeManager => home_manager_report(&config),
-            ReportSource::NixOS => nixos_report(&config),
+            ReportSource::HomeManager => home_manager_report_with_logs(&config, log_sender),
+            ReportSource::NixOS => nixos_report_with_logs(&config, log_sender),
             ReportSource::Demo => Ok(demo_report()),
         };
-        let _ = sender.send(report);
+        let _ = report_sender.send(report);
     });
 
     let window = window.downgrade();
     let root = root.downgrade();
+    let mut recent_logs = RecentLogs::new(6);
     gtk::glib::timeout_add_local(Duration::from_millis(100), move || {
         let Some(window) = window.upgrade() else {
             return gtk::glib::ControlFlow::Break;
@@ -211,7 +214,11 @@ fn show_report_loading(
             return gtk::glib::ControlFlow::Break;
         };
 
-        match receiver.try_recv() {
+        if recent_logs.drain_from(&log_receiver) {
+            loading_log.set_lines(&recent_logs.lines());
+        }
+
+        match report_receiver.try_recv() {
             Ok(Ok(report)) => {
                 cache_report_and_show(&window, &root, Rc::clone(&state), source, report);
                 gtk::glib::ControlFlow::Break
@@ -243,4 +250,64 @@ fn cache_report_and_show(
 ) {
     state.cache_report(source, report.clone());
     show_report(window, root, state, source, report);
+}
+
+struct RecentLogs {
+    lines: VecDeque<String>,
+    limit: usize,
+}
+
+impl RecentLogs {
+    fn new(limit: usize) -> Self {
+        Self {
+            lines: VecDeque::with_capacity(limit),
+            limit,
+        }
+    }
+
+    fn drain_from(&mut self, receiver: &mpsc::Receiver<String>) -> bool {
+        let mut changed = false;
+
+        for line in receiver.try_iter() {
+            self.push(line);
+            changed = true;
+        }
+
+        changed
+    }
+
+    fn push(&mut self, line: String) {
+        self.lines.push_back(line);
+
+        while self.lines.len() > self.limit {
+            self.lines.pop_front();
+        }
+    }
+
+    fn lines(&self) -> Vec<&str> {
+        self.lines.iter().map(String::as_str).collect()
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::RecentLogs;
+
+    #[test]
+    fn keeps_only_the_latest_lines() {
+        let mut logs = RecentLogs::new(6);
+
+        logs.push("one".to_owned());
+        logs.push("two".to_owned());
+        logs.push("three".to_owned());
+        logs.push("four".to_owned());
+        logs.push("five".to_owned());
+        logs.push("six".to_owned());
+        logs.push("seven".to_owned());
+
+        assert_eq!(
+            logs.lines(),
+            vec!["two", "three", "four", "five", "six", "seven"]
+        );
+    }
 }

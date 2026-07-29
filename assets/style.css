@@ -102,6 +102,23 @@ window.update-popup {
   margin-top: 2px;
 }
 
+.loading-log {
+  background-color: rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(222, 226, 230, 0.12);
+  border-radius: 6px;
+  margin: 4px 24px 0 24px;
+  min-height: 120px;
+  padding: 9px 12px;
+}
+
+.loading-log-line {
+  color: #c2cad3;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-size: 15px;
+  min-height: 20px;
+  padding: 0;
+}
+
 .message-scroller {
   min-height: 120px;
 }

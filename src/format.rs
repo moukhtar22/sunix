@@ -50,10 +50,10 @@ pub fn format_version_change(
         return orient_version_change(status, old, new);
     }
 
-    if matches!(status, ChangeStatus::Downgraded) {
-        if let Some(version_change) = compact_downgrade_versions(versions) {
-            return version_change;
-        }
+    if matches!(status, ChangeStatus::Downgraded)
+        && let Some(version_change) = compact_downgrade_versions(versions)
+    {
+        return version_change;
     }
 
     let mut old = compact_version_with_kind(versions, "removed");

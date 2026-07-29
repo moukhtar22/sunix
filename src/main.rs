@@ -1,6 +1,7 @@
 use gtk::glib;
 
 mod cli;
+mod command;
 mod config;
 mod dix;
 mod format;
