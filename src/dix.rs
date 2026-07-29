@@ -1,4 +1,7 @@
-use std::path::Path;
+use std::env;
+use std::fs;
+use std::io;
+use std::path::{Path, PathBuf};
 use std::process::Command;
 use std::sync::mpsc;
 
@@ -34,14 +37,13 @@ fn home_manager_report(
     logs: Option<&mpsc::Sender<String>>,
 ) -> Result<UpdateReport, String> {
     let flake_dir = config.home_flake_dir();
-    let generations_output = run_command(
-        Command::new("home-manager")
-            .arg("generations")
-            .current_dir(flake_dir),
-        &format!("home-manager generations in {}", flake_dir.display()),
-    )?;
-    let generations = String::from_utf8_lossy(&generations_output.stdout);
-    let old_generation = parse_current_home_manager_generation(&generations)?;
+    let old_generation_path = current_home_manager_generation_path()?;
+    let old_generation = old_generation_path.to_str().ok_or_else(|| {
+        format!(
+            "active Home Manager generation path {} is not valid UTF-8",
+            old_generation_path.display()
+        )
+    })?;
     let attr = format!(
         ".#homeConfigurations.{}.activationPackage",
         config.home_flake
@@ -143,17 +145,68 @@ fn nix_build_output_paths(
     Ok(output_paths)
 }
 
-fn parse_current_home_manager_generation(output: &str) -> Result<&str, String> {
-    output
-        .lines()
-        .map(str::trim)
-        .find(|line| !line.is_empty())
-        .and_then(|line| line.split_once("->").map(|(_, path)| path.trim()))
-        .and_then(|path| path.split_whitespace().next())
-        .filter(|path| !path.is_empty())
-        .ok_or_else(|| {
-            "home-manager generations did not print a current generation path".to_owned()
+fn current_home_manager_generation_path() -> Result<PathBuf, String> {
+    resolve_current_home_manager_generation_path(&home_manager_profile_candidates()?)
+}
+
+fn home_manager_profile_candidates() -> Result<Vec<PathBuf>, String> {
+    let mut candidates = Vec::new();
+
+    if let Some(state_home) = env::var_os("XDG_STATE_HOME")
+        .filter(|value| !value.is_empty())
+        .map(PathBuf::from)
+        .or_else(|| {
+            env::var_os("HOME")
+                .filter(|value| !value.is_empty())
+                .map(|home| PathBuf::from(home).join(".local/state"))
         })
+    {
+        candidates.push(state_home.join("nix/profiles/home-manager"));
+    }
+
+    if let Some(user) = env::var_os("USER")
+        .filter(|value| !value.is_empty())
+        .or_else(|| env::var_os("LOGNAME").filter(|value| !value.is_empty()))
+    {
+        candidates.push(
+            PathBuf::from("/nix/var/nix/profiles/per-user")
+                .join(user)
+                .join("home-manager"),
+        );
+    }
+
+    if candidates.is_empty() {
+        return Err(
+            "XDG_STATE_HOME, HOME, USER, and LOGNAME are unset; cannot locate Home Manager profile"
+                .to_owned(),
+        );
+    }
+
+    Ok(candidates)
+}
+
+fn resolve_current_home_manager_generation_path(candidates: &[PathBuf]) -> Result<PathBuf, String> {
+    for candidate in candidates {
+        match fs::canonicalize(candidate) {
+            Ok(path) => return Ok(path),
+            Err(err) if err.kind() == io::ErrorKind::NotFound => {}
+            Err(err) => {
+                return Err(format!(
+                    "failed to resolve Home Manager profile {}: {err}",
+                    candidate.display()
+                ));
+            }
+        }
+    }
+
+    let tried = candidates
+        .iter()
+        .map(|candidate| candidate.display().to_string())
+        .collect::<Vec<_>>()
+        .join(", ");
+    Err(format!(
+        "could not find active Home Manager profile; tried {tried}"
+    ))
 }
 
 fn dix_binary(config: &SunixConfig) -> &Path {
@@ -314,26 +367,31 @@ mod tests {
     }
 
     #[test]
-    fn parses_current_home_manager_generation_path() {
-        let path = parse_current_home_manager_generation(
-            r#"
-2026-07-29 09:40 : id 925 -> /nix/store/d6mf0l1x3qq5sffzq0p2r68q3y5yvc9m-home-manager-generation (current)
-2026-07-28 14:11 : id 924 -> /nix/store/460hk2172k6hv7v2m6rpjg481ncy49zn-home-manager-generation
-"#,
-        )
-        .unwrap();
+    fn resolves_current_home_manager_generation_profile_candidate() {
+        let root = test_dir("hm-profile");
+        let missing = root.join("missing-home-manager");
+        let generation = root.join("generation");
+        let profile = root.join("home-manager");
+        std::fs::create_dir_all(&generation).unwrap();
+        std::os::unix::fs::symlink(&generation, &profile).unwrap();
 
-        assert_eq!(
-            path,
-            "/nix/store/d6mf0l1x3qq5sffzq0p2r68q3y5yvc9m-home-manager-generation"
-        );
+        let resolved = resolve_current_home_manager_generation_path(&[missing, profile]).unwrap();
+
+        assert_eq!(resolved, std::fs::canonicalize(generation).unwrap());
+        std::fs::remove_dir_all(root).unwrap();
     }
 
     #[test]
-    fn rejects_missing_home_manager_generation_path() {
-        let err = parse_current_home_manager_generation("").unwrap_err();
+    fn reports_missing_home_manager_profile_candidates() {
+        let err = resolve_current_home_manager_generation_path(&[
+            PathBuf::from("/missing-home-manager-profile-one"),
+            PathBuf::from("/missing-home-manager-profile-two"),
+        ])
+        .unwrap_err();
 
-        assert!(err.contains("did not print a current generation path"));
+        assert!(err.contains("could not find active Home Manager profile"));
+        assert!(err.contains("/missing-home-manager-profile-one"));
+        assert!(err.contains("/missing-home-manager-profile-two"));
     }
 
     #[test]
@@ -512,5 +570,12 @@ mod tests {
 
     fn item<'a>(group: &'a ChangeGroup, name: &str) -> &'a PackageChange {
         group.items.iter().find(|item| item.name == name).unwrap()
+    }
+
+    fn test_dir(name: &str) -> PathBuf {
+        let path = std::env::temp_dir().join(format!("sunix-{name}-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&path);
+        std::fs::create_dir_all(&path).unwrap();
+        path
     }
 }
