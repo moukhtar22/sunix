@@ -6,7 +6,7 @@
 
 A small GTK4 layer-shell popup for Wayland compositors that support `wlr-layer-shell`. It shows the expected changes before a NixOS or Home Manager switch is applied, using [dix](https://github.com/manic-systems/dix) under the hood.
 
-**DISCLAIMER**: this project was assisted by AI tools, especially for *all the UI stuff I suck at*, but the actual logic was designed and reviewed by myself, including this documentation written by hand.
+https://github.com/user-attachments/assets/1b0a44e9-10f1-437d-b008-88946b9c50a1
 
 ## Install
 
@@ -18,7 +18,7 @@ Add the corresponding input to your Nix flake (recommended).
 }
 ```
 
-And either use the provide Home Manager module:
+And either use the provided Home Manager module:
 
 ```nix
 modules = [ inputs.sunix.homeModules.default ];
@@ -58,7 +58,7 @@ SUNix can be fully used via the following keyboard shortcuts:
 - `Left` or `H`: go back from a report or error screen.
 - `Esc`: close the popup.
 
-Reports are cached for the current SUNix process, so clicking the same button again in the same session reuses the existing report.
+Reports are cached during the same SUNix session, so reports aren't re-evaluated unless the program is restarted.
 
 ## Configuration
 
@@ -164,3 +164,7 @@ nix build --print-out-paths --no-link \
   .#homeConfigurations.<home_flake>.activationPackage \
   | xargs -r dix (readlink -f "$XDG_STATE_HOME/nix/profiles/home-manager")
 ```
+
+## DISCLAIMER
+ 
+This project was assisted by AI tools, especially for *all the UI stuff I suck at*, but the actual logic was designed and reviewed by myself. This documentation has been written by hand as well, as I enjoy writing docs that I would like to read.
