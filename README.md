@@ -6,6 +6,8 @@
 
 A small GTK4 layer-shell popup for Wayland compositors that support `wlr-layer-shell`. It shows the expected changes before a NixOS or Home Manager switch is applied, using [dix](https://github.com/manic-systems/dix) under the hood.
 
+**DISCLAIMER**: this project was assisted by AI tools, especially for *all the UI stuff I suck at*, but the actual logic was designed and reviewed by myself, including this documentation written by hand.
+
 ## Install
 
 Add the corresponding input to your Nix flake (recommended).
@@ -139,4 +141,26 @@ SUNix can be easily integrated with Waybar, e.g.
   "on-click": "pgrep -io 'sunix' | xargs kill || sunix",
   "tooltip-format": "Software Updates for Nix"
 }
+```
+
+## Design Idea
+
+This project started by following my curiosity after I've replaced `nvd --diff` by `dix`, then I thought I could automate this idea of "Software Updates" as it's common in other Linux distros.
+
+You can achieve the same functionality directly in your terminal with these one-liners.
+
+### NixOS
+
+```console
+nix build --print-out-paths --no-link \
+  .#nixosConfigurations.<nixos_flake>.config.system.build.toplevel \
+  | xargs dix /run/current-system/
+```
+
+### Home Manager
+
+```console
+nix build --print-out-paths --no-link \
+  .#homeConfigurations.<home_flake>.activationPackage \
+  | xargs -r dix (readlink -f "$XDG_STATE_HOME/nix/profiles/home-manager")
 ```
