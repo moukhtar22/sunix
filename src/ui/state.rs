@@ -10,6 +10,8 @@ pub(super) struct AppState {
     config: Result<SunixConfig, String>,
     view: Cell<ViewState>,
     scroll_adjustment: RefCell<Option<gtk::Adjustment>>,
+    report_export_button: RefCell<Option<gtk::Button>>,
+    report_export_popover: RefCell<Option<gtk::Popover>>,
     home_report_cache: RefCell<Option<UpdateReport>>,
     nixos_report_cache: RefCell<Option<UpdateReport>>,
 }
@@ -35,6 +37,8 @@ impl AppState {
             config,
             view: Cell::new(ViewState::Chooser),
             scroll_adjustment: RefCell::new(None),
+            report_export_button: RefCell::new(None),
+            report_export_popover: RefCell::new(None),
             home_report_cache: RefCell::new(None),
             nixos_report_cache: RefCell::new(None),
         }
@@ -54,6 +58,8 @@ impl AppState {
 
     pub(super) fn set_view(&self, view: ViewState) {
         self.view.set(view);
+        self.report_export_button.replace(None);
+        self.report_export_popover.replace(None);
     }
 
     pub(super) fn clear_scroll_adjustment(&self) {
@@ -78,6 +84,41 @@ impl AppState {
         let upper = (adjustment.upper() - adjustment.page_size()).max(lower);
         let next_value = (adjustment.value() + (step * direction)).clamp(lower, upper);
         adjustment.set_value(next_value);
+        true
+    }
+
+    pub(super) fn register_report_export_controls(
+        &self,
+        button: &gtk::Button,
+        popover: &gtk::Popover,
+    ) {
+        self.report_export_button.replace(Some(button.clone()));
+        self.report_export_popover.replace(Some(popover.clone()));
+    }
+
+    pub(super) fn activate_report_export(&self) -> bool {
+        if self.view() != ViewState::Report {
+            return false;
+        }
+
+        let Some(button) = self.report_export_button.borrow().clone() else {
+            return false;
+        };
+
+        button.emit_clicked();
+        true
+    }
+
+    pub(super) fn close_report_export(&self) -> bool {
+        let Some(popover) = self.report_export_popover.borrow().clone() else {
+            return false;
+        };
+
+        if popover.parent().is_none() {
+            return false;
+        }
+
+        popover.popdown();
         true
     }
 

@@ -16,18 +16,14 @@ use super::chooser::show_chooser;
 use super::messages::{show_config_error, show_loading_message, show_report_error};
 use super::report::show_report;
 use super::state::{AppState, ReportSource, ViewState};
+use super::widgets::header_icon_button;
 
 pub(super) fn back_button(
     window: &gtk::ApplicationWindow,
     root: &gtk::Box,
     state: Rc<AppState>,
 ) -> gtk::Button {
-    let button = gtk::Button::from_icon_name("go-previous-symbolic");
-    button.add_css_class("back-button");
-    button.set_focus_on_click(false);
-    button.set_halign(gtk::Align::End);
-    button.set_valign(gtk::Align::Start);
-    button.set_tooltip_text(Some("Back"));
+    let button = header_icon_button("go-previous-symbolic", "Back");
 
     let window = window.clone();
     let root = root.clone();
@@ -62,23 +58,43 @@ pub(super) fn connect_keyboard_shortcuts(
     key_controller.set_propagation_phase(gtk::PropagationPhase::Capture);
     let shortcut_window = window.clone();
     let shortcut_root = root.clone();
+    let shortcut_state = Rc::clone(&state);
 
-    key_controller.connect_key_pressed(move |_, keyval, _, _| {
+    key_controller.connect_key_pressed(move |_, keyval, _, modifiers| {
         if keyval == gdk::Key::Escape {
+            if shortcut_state.close_report_export() {
+                return gtk::glib::Propagation::Stop;
+            }
             shortcut_window.close();
             return gtk::glib::Propagation::Stop;
         }
 
+        if modifiers.contains(gdk::ModifierType::ALT_MASK) {
+            return gtk::glib::Propagation::Proceed;
+        }
+
+        if text_entry_has_focus(&shortcut_window) {
+            return gtk::glib::Propagation::Proceed;
+        }
+
+        if key_matches(keyval, 'e') && shortcut_state.activate_report_export() {
+            return gtk::glib::Propagation::Stop;
+        }
+
         if keyval == gdk::Key::Left || key_matches(keyval, 'h') {
-            navigate_back(&shortcut_window, &shortcut_root, Rc::clone(&state));
+            navigate_back(&shortcut_window, &shortcut_root, Rc::clone(&shortcut_state));
             return gtk::glib::Propagation::Stop;
         }
 
-        if (keyval == gdk::Key::Up || key_matches(keyval, 'k')) && state.scroll_active_view(-1.0) {
+        if (keyval == gdk::Key::Up || key_matches(keyval, 'k'))
+            && shortcut_state.scroll_active_view(-1.0)
+        {
             return gtk::glib::Propagation::Stop;
         }
 
-        if (keyval == gdk::Key::Down || key_matches(keyval, 'j')) && state.scroll_active_view(1.0) {
+        if (keyval == gdk::Key::Down || key_matches(keyval, 'j'))
+            && shortcut_state.scroll_active_view(1.0)
+        {
             return gtk::glib::Propagation::Stop;
         }
 
@@ -86,7 +102,7 @@ pub(super) fn connect_keyboard_shortcuts(
             open_report_source(
                 &shortcut_window,
                 &shortcut_root,
-                Rc::clone(&state),
+                Rc::clone(&shortcut_state),
                 ReportSource::HomeManager,
             );
             return gtk::glib::Propagation::Stop;
@@ -96,17 +112,17 @@ pub(super) fn connect_keyboard_shortcuts(
             open_report_source(
                 &shortcut_window,
                 &shortcut_root,
-                Rc::clone(&state),
+                Rc::clone(&shortcut_state),
                 ReportSource::NixOS,
             );
             return gtk::glib::Propagation::Stop;
         }
 
-        if state.show_demo_enabled() && key_matches(keyval, 'd') {
+        if shortcut_state.show_demo_enabled() && key_matches(keyval, 'd') {
             open_report_source(
                 &shortcut_window,
                 &shortcut_root,
-                Rc::clone(&state),
+                Rc::clone(&shortcut_state),
                 ReportSource::Demo,
             );
             return gtk::glib::Propagation::Stop;
@@ -115,6 +131,10 @@ pub(super) fn connect_keyboard_shortcuts(
         gtk::glib::Propagation::Proceed
     });
     window.add_controller(key_controller);
+}
+
+fn text_entry_has_focus(window: &gtk::ApplicationWindow) -> bool {
+    gtk::prelude::GtkWindowExt::focus(window).is_some_and(|widget| widget.is::<gtk::Entry>())
 }
 
 fn key_matches(keyval: gdk::Key, expected: char) -> bool {

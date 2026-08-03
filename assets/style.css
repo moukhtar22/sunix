@@ -152,31 +152,103 @@ window.update-popup {
   margin-bottom: 4px;
 }
 
-.back-button {
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  color: #8d98a6;
-  min-height: 40px;
-  min-width: 40px;
+.report-actions {
   margin-right: 16px;
   margin-top: 16px;
+}
+
+.header-icon-button {
+  background-color: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(222, 226, 230, 0.10);
+  border-radius: 6px;
+  color: #8d98a6;
+  min-height: 44px;
+  min-width: 44px;
   padding: 0;
 }
 
-.back-button:hover {
+.header-icon-button:hover {
   background-color: rgba(255, 255, 255, 0.06);
   border-color: rgba(222, 226, 230, 0.16);
   color: #e7ebef;
 }
 
-.back-button:active {
+.header-icon-button:active {
   background-color: rgba(82, 145, 224, 0.14);
   border-color: rgba(158, 197, 255, 0.38);
 }
 
-.back-button image {
+.header-icon-button image {
   -gtk-icon-size: 20px;
+}
+
+.export-menu {
+  background-color: rgba(25, 28, 31, 0.98);
+  border: 1px solid rgba(222, 226, 230, 0.16);
+  border-radius: 6px;
+  min-width: 460px;
+  padding: 6px;
+}
+
+.export-path {
+  background-color: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(222, 226, 230, 0.14);
+  border-radius: 5px;
+  color: #e7ebef;
+  font-family: "CaskaydiaMono Nerd Font", "JetBrains Mono", monospace;
+  font-size: 14px;
+  min-height: 36px;
+  padding: 0 10px;
+}
+
+.export-path:focus {
+  border-color: rgba(158, 197, 255, 0.42);
+}
+
+.export-formats {
+  margin-top: 2px;
+}
+
+.export-menu .key-hints {
+  margin-top: 8px;
+}
+
+.export-option {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #e7ebef;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 36px;
+  min-width: 96px;
+  padding: 0 12px;
+}
+
+.export-option:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(222, 226, 230, 0.14);
+}
+
+.export-option:focus {
+  background-color: rgba(82, 145, 224, 0.14);
+  border-color: rgba(158, 197, 255, 0.42);
+}
+
+.export-status {
+  color: #8d98a6;
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 22px;
+  min-width: 420px;
+}
+
+.export-status.success {
+  color: #9fe3a8;
+}
+
+.export-status.error {
+  color: #ffb3b3;
 }
 
 .title {

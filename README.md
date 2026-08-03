@@ -55,10 +55,16 @@ SUNix can be fully used via the following keyboard shortcuts:
 - `D`: show the bundled Demo report when `show_demo=true`.
 - `Up` / `K`: scroll up in the active report or error output.
 - `Down` / `J`: scroll down in the active report or error output.
+- `E`: open the report export menu when a non-empty report is visible.
+- `Alt+P` / `Alt+M`: export the visible report as PDF or Markdown from the export menu.
 - `Left` or `H`: go back from a report or error screen.
 - `Esc`: close the popup.
 
 Reports are cached during the same SUNix session, so reports aren't re-evaluated unless the program is restarted.
+
+### Exports
+
+SUNix reports can be exported as a PDF file or Markdown file. The latter is particularly useful to share on Pull Requests, e.g. https://github.com/gvolpe/nix-config/pull/334.
 
 ## Configuration
 

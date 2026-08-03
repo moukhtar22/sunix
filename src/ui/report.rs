@@ -6,6 +6,7 @@ use gtk::prelude::*;
 use crate::format::{format_bytes, format_signed_bytes};
 use crate::model::{ChangeStatus, PackageChange, ReportTotals, UpdateReport};
 
+use super::export::export_controls;
 use super::navigation::back_button;
 use super::state::{AppState, ReportSource, ViewState};
 use super::widgets::{clear_view, label, report_key_hints};
@@ -32,22 +33,34 @@ pub(super) fn show_report(
     let back = back_button(window, root, Rc::clone(&state));
     let title = label(APP_TITLE, &["title"], 0.0);
     let subtitle = report_subtitle(source, &report.flake);
+    let empty_report = is_empty_report(&report);
 
     let heading = gtk::Box::new(gtk::Orientation::Vertical, 4);
     heading.set_hexpand(true);
     heading.append(&title);
     heading.append(&subtitle);
 
+    let actions = gtk::Box::new(gtk::Orientation::Horizontal, 8);
+    actions.add_css_class("report-actions");
+    actions.set_halign(gtk::Align::End);
+    actions.set_valign(gtk::Align::Start);
+    if !empty_report {
+        let export = export_controls(source, &report);
+        state.register_report_export_controls(&export.button, &export.popover);
+        actions.append(&export.button);
+    }
+    actions.append(&back);
+
     let header = gtk::Box::new(gtk::Orientation::Horizontal, 16);
     header.add_css_class("report-header");
     header.append(&heading);
-    header.append(&back);
+    header.append(&actions);
     root.append(&header);
 
     let summary = gtk::Box::new(gtk::Orientation::Vertical, 0);
     summary.add_css_class("summary");
 
-    if is_empty_report(&report) {
+    if empty_report {
         summary.append(&label("No changes", &["no-changes"], 0.0));
     } else {
         let summary_counts = gtk::Box::new(gtk::Orientation::Horizontal, 16);
@@ -80,7 +93,7 @@ pub(super) fn show_report(
     scroller.set_child(Some(&content));
     state.register_scroll_adjustment(&scroller);
     root.append(&scroller);
-    root.append(&report_key_hints(state.show_demo_enabled()));
+    root.append(&report_key_hints(state.show_demo_enabled(), !empty_report));
     root.append(&resize_handle(window));
 }
 

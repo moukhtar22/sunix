@@ -7,6 +7,8 @@
 }:
 
 let
+  cargoToml = lib.importTOML ../Cargo.toml;
+
   sourceRoot = toString ../.;
 
   includedFiles = [
@@ -58,5 +60,5 @@ rustPlatform.buildRustPackage {
 
   pname = "sunix";
   src = source;
-  version = "0.1.0";
+  version = cargoToml.package.version;
 }

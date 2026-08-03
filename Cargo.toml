@@ -1,6 +1,6 @@
 [package]
 name = "sunix"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 rust-version = "1.92"
 description = "A GTK4 layer-shell popup for Nix flake software update summaries"
@@ -20,6 +20,7 @@ include = [
 ]
 
 [dependencies]
+cairo = { package = "cairo-rs", version = "0.22", features = ["pdf"] }
 gtk = { package = "gtk4", version = "0.11" }
 gtk4-layer-shell = "0.8"
 serde = { version = "1", features = ["derive"] }

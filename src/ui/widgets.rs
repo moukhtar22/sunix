@@ -7,6 +7,22 @@ pub(super) fn chooser_button(text: &str) -> gtk::Button {
     button
 }
 
+pub(super) fn header_icon_button(icon_name: &str, tooltip: &str) -> gtk::Button {
+    let icon = gtk::Image::from_icon_name(icon_name);
+    icon.set_pixel_size(20);
+    icon.set_size_request(20, 20);
+    icon.set_halign(gtk::Align::Center);
+    icon.set_valign(gtk::Align::Center);
+
+    let button = gtk::Button::new();
+    button.add_css_class("header-icon-button");
+    button.set_focus_on_click(false);
+    button.set_size_request(44, 44);
+    button.set_tooltip_text(Some(tooltip));
+    button.set_child(Some(&icon));
+    button
+}
+
 pub(super) fn chooser_key_hints(show_demo: bool) -> gtk::Box {
     let mut hints = vec![("M", "Home Manager"), ("N", "NixOS")];
     if show_demo {
@@ -16,7 +32,7 @@ pub(super) fn chooser_key_hints(show_demo: bool) -> gtk::Box {
     key_hints(&hints)
 }
 
-pub(super) fn report_key_hints(show_demo: bool) -> gtk::Box {
+pub(super) fn report_key_hints(show_demo: bool, show_export: bool) -> gtk::Box {
     let mut hints = vec![
         ("↑ / K", "Scroll Up"),
         ("↓ / J", "Scroll Down"),
@@ -26,9 +42,16 @@ pub(super) fn report_key_hints(show_demo: bool) -> gtk::Box {
     if show_demo {
         hints.push(("D", "Demo"));
     }
+    if show_export {
+        hints.push(("E", "Export"));
+    }
     hints.push(("← / H", "Back"));
     hints.push(("Esc", "Close"));
     key_hints(&hints)
+}
+
+pub(super) fn export_key_hints() -> gtk::Box {
+    key_hints(&[("Alt+P", "PDF"), ("Alt+M", "Markdown")])
 }
 
 pub(super) fn close_key_hints() -> gtk::Box {

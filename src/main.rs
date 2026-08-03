@@ -6,6 +6,8 @@ mod config;
 mod dix;
 mod format;
 mod model;
+mod report_markdown;
+mod report_pdf;
 mod ui;
 
 fn main() -> glib::ExitCode {

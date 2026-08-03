@@ -181,7 +181,7 @@ fn show_message(
         actions.append(&back_button(window, root, state));
         container.append(&actions);
         root.append(&container);
-        root.append(&report_key_hints(show_demo));
+        root.append(&report_key_hints(show_demo, false));
     } else {
         root.append(&container);
         root.append(&close_key_hints());
