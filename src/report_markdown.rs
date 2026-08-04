@@ -2,12 +2,15 @@ use crate::format::{format_bytes, format_signed_bytes};
 use crate::model::{PackageChange, ReportTotals, UpdateReport};
 
 pub fn render_report(report: &UpdateReport, source_label: &str) -> String {
+    render_report_with_title(
+        report,
+        &format!("{source_label} #{} :rocket:", report.flake),
+    )
+}
+
+pub fn render_report_with_title(report: &UpdateReport, title: &str) -> String {
     let mut markdown = String::new();
-    markdown.push_str(&format!(
-        "## SUNix Report: {} #{} :rocket:\n\n",
-        escape_text(source_label),
-        escape_text(&report.flake)
-    ));
+    markdown.push_str(&format!("## SUNix Report: {}\n\n", escape_text(title)));
     markdown.push_str(&format!("**Summary:** {}\n", summary(report)));
 
     if let Some(metrics) = metrics(report) {
@@ -171,6 +174,16 @@ mod tests {
 
         assert!(markdown.contains("**Summary:** No changes"));
         assert!(!markdown.contains("| Category |"));
+    }
+
+    #[test]
+    fn renders_report_with_cli_title() {
+        let report = sample_report();
+
+        let markdown = render_report_with_title(&report, "NixOS .#aorus");
+
+        assert!(markdown.starts_with("## SUNix Report: NixOS .#aorus\n\n"));
+        assert!(!markdown.contains(":rocket:"));
     }
 
     #[test]

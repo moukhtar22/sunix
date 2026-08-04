@@ -56,7 +56,7 @@ SUNix can be fully used via the following keyboard shortcuts:
 - `Up` / `K`: scroll up in the active report or error output.
 - `Down` / `J`: scroll down in the active report or error output.
 - `E`: open the report export menu when a non-empty report is visible.
-- `Alt+P` / `Alt+M`: export the visible report as PDF or Markdown from the export menu.
+   + `Alt+P` / `Alt+M`: export the visible report as PDF or Markdown from the export menu.
 - `Left` or `H`: go back from a report or error screen.
 - `Esc`: close the popup.
 
@@ -65,6 +65,20 @@ Reports are cached during the same SUNix session, so reports aren't re-evaluated
 ### Exports
 
 SUNix reports can be exported as a PDF file or Markdown file. The latter is particularly useful to share on Pull Requests, e.g. https://github.com/gvolpe/nix-config/pull/334.
+
+The SUNix cli can also format `dix --output=json` into markdown directly from stdin:
+
+```console
+dix --output=json /path1 /path2 \
+  | sunix --markdown-report "NixOS .#flake"
+```
+
+PDF reports are also supported by the cli:
+
+```console
+dix --output=json /path1 /path2 \
+  | sunix --pdf-report "NixOS .#flake" > sunix-report.pdf
+```
 
 ## Configuration
 
@@ -163,6 +177,15 @@ nix build --print-out-paths --no-link \
   | xargs dix /run/current-system/
 ```
 
+The SUNix cli can also be used to get a Markdown report for Pull Requests:
+
+```console
+nix build --print-out-paths --no-link \
+  .#nixosConfigurations.<nixos_flake>.config.system.build.toplevel \
+  | xargs dix /run/current-system/ \
+  | sunix --markdown-report "NixOS .#<nixos_flake>"
+```
+
 ### Home Manager
 
 ```console
@@ -173,4 +196,4 @@ nix build --print-out-paths --no-link \
 
 ## DISCLAIMER
  
-This project was assisted by AI tools, especially for *all the UI stuff I suck at*, but the actual logic was designed and reviewed by myself. This documentation has been written by hand as well, as I enjoy writing docs that I would like to read.
+This project was assisted by AI tools, especially for *all the UI stuff I suck at*, but the actual logic was designed and reviewed by myself. This documentation has been written by hand as well, as I enjoy doing so.

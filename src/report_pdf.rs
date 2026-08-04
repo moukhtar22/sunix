@@ -31,18 +31,44 @@ const COL_GAP: f64 = 12.0;
 pub fn save_report(report: &UpdateReport, subtitle: &str, path: &Path) -> Result<(), String> {
     let surface = PdfSurface::new(DOC_WIDTH, PDF_PAGE_HEIGHT, path)
         .map_err(|err| format!("failed to create PDF {}: {err}", path.display()))?;
+    render_to_surface(report, subtitle, &surface)?;
+    surface.finish();
+    surface
+        .status()
+        .map_err(|err| format!("failed to write PDF {}: {err}", path.display()))
+}
+
+pub fn render_report(report: &UpdateReport, title: &str) -> Result<Vec<u8>, String> {
+    let surface = PdfSurface::for_stream(DOC_WIDTH, PDF_PAGE_HEIGHT, Vec::new())
+        .map_err(|err| format!("failed to create PDF output: {err}"))?;
+    render_to_surface(report, &format!("SUNix Report: {title}"), &surface)?;
+
+    let stream = surface
+        .finish_output_stream()
+        .map_err(|err| format!("failed to write PDF output: {}", err.error))?;
+    surface
+        .status()
+        .map_err(|err| format!("failed to write PDF output: {err}"))?;
+    stream
+        .downcast::<Vec<u8>>()
+        .map(|bytes| *bytes)
+        .map_err(|_| "failed to recover PDF output buffer".to_owned())
+}
+
+fn render_to_surface(
+    report: &UpdateReport,
+    subtitle: &str,
+    surface: &PdfSurface,
+) -> Result<(), String> {
     let context =
-        Context::new(&surface).map_err(|err| format!("failed to create renderer: {err}"))?;
+        Context::new(surface).map_err(|err| format!("failed to create renderer: {err}"))?;
     let mut renderer = ReportRenderer::new(&context, PDF_PAGE_HEIGHT);
     renderer.render(report, subtitle)?;
     context
         .show_page()
         .map_err(|err| format!("failed to finish PDF page: {err}"))?;
     surface.flush();
-    surface.finish();
-    surface
-        .status()
-        .map_err(|err| format!("failed to write PDF {}: {err}", path.display()))
+    Ok(())
 }
 
 struct ReportRenderer<'a> {
@@ -554,7 +580,7 @@ mod tests {
 
     use crate::model::{ChangeGroup, PackageChange, ReportTotals, UpdateReport};
 
-    use super::save_report;
+    use super::{render_report, save_report};
 
     #[test]
     fn writes_pdf_report() {
@@ -567,6 +593,14 @@ mod tests {
         let bytes = fs::read(&path).expect("PDF export should write a file");
         assert!(bytes.starts_with(b"%PDF"));
         let _ = fs::remove_file(path);
+    }
+
+    #[test]
+    fn renders_pdf_report_to_bytes() {
+        let bytes = render_report(&sample_report(), "NixOS .#aorus")
+            .expect("PDF export should render to bytes");
+
+        assert!(bytes.starts_with(b"%PDF"));
     }
 
     fn output_path() -> std::path::PathBuf {
